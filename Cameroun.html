@@ -1,14 +1,22 @@
 <!doctype html>
-<html class="no-js" lang="zxx">
-
+<html class="no-js" lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Cameroon Branch - Cofadare</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Cofadare</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <link rel="manifest" href="site.webmanifest"> -->
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+    <!-- Place favicon.ico in the root directory -->
 
     <!-- CSS here -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -22,33 +30,81 @@
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/slicknav.css">
     <link rel="stylesheet" href="css/style.css">
-    
+    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        
+        
+        /* Hero Section */
         .hero-section {
             background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
             color: white;
             padding: 80px 0;
-            margin-top: 0;
+            text-align: center;
         }
         
         .hero-section h1 {
             font-size: 48px;
             font-weight: bold;
             margin-bottom: 20px;
-            color: white;
         }
         
         .hero-section p {
             font-size: 20px;
-            color: rgba(255,255,255,0.95);
             line-height: 1.8;
             max-width: 900px;
-            margin: 0 auto;
+            margin: 0 auto 30px;
         }
         
+        .authorization-badge {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 20px 30px;
+            border-radius: 10px;
+            display: inline-block;
+            font-weight: bold;
+        }
+        
+        /* History Section */
         .history-section {
             background: #fff;
             padding: 80px 0;
+        }
+        
+        .section-intro {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 60px;
+        }
+        
+        .section-intro h2 {
+            font-size: 40px;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        
+        .section-intro p {
+            font-size: 18px;
+            color: #666;
+            line-height: 1.8;
         }
         
         .info-card {
@@ -73,36 +129,37 @@
             font-size: 16px;
         }
         
-        .section-intro {
-            text-align: center;
-            max-width: 900px;
-            margin: 0 auto 60px;
-        }
-        
-        .section-intro h2 {
-            font-size: 40px;
-            color: #2c3e50;
-            margin-bottom: 20px;
-            font-weight: bold;
-        }
-        
-        .section-intro p {
-            font-size: 18px;
-            color: #666;
-            line-height: 1.8;
-        }
-        
-        .icon-box {
-            text-align: center;
-            margin-bottom: 25px;
-        }
-        
         .icon-box i {
-            font-size: 60px;
+            font-size: 50px;
             color: #11998e;
             margin-bottom: 20px;
         }
         
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -15px;
+        }
+        
+        .col-lg-6 {
+            flex: 0 0 50%;
+            max-width: 50%;
+            padding: 0 15px;
+        }
+        
+        .col-lg-3, .col-lg-4 {
+            flex: 0 0 33.333%;
+            max-width: 33.333%;
+            padding: 0 15px;
+        }
+        
+        .col-lg-12 {
+            flex: 0 0 100%;
+            max-width: 100%;
+            padding: 0 15px;
+        }
+        
+        /* Vision Section */
         .vision-section {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             padding: 80px 0;
@@ -117,13 +174,13 @@
         }
         
         .vision-section p {
-            color: rgba(255,255,255,0.95);
             font-size: 22px;
             line-height: 1.8;
             max-width: 900px;
             margin: 0 auto;
         }
         
+        /* Policy Cards */
         .policy-card {
             background: #fff;
             border-radius: 15px;
@@ -146,12 +203,7 @@
             font-weight: bold;
         }
         
-        .policy-card p {
-            color: #666;
-            font-size: 15px;
-            line-height: 1.8;
-        }
-        
+        /* Mission Cards */
         .mission-card {
             background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
             color: white;
@@ -174,53 +226,142 @@
             line-height: 1.8;
         }
         
-        .org-chart-section {
+        /* Team Section */
+        .team-section {
             background: #f9f9f9;
             padding: 80px 0;
         }
         
-        .position-card {
+        .team-member {
             background: #fff;
             border-radius: 10px;
-            padding: 25px;
-            margin-bottom: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
             box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            border-left: 4px solid #11998e;
+            text-align: center;
             transition: all 0.3s ease;
         }
         
-        .position-card:hover {
-            transform: translateX(5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        .team-member:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
         }
         
-        .position-card h5 {
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 5px solid #11998e;
+        }
+        
+        .team-info h5 {
             color: #2c3e50;
-            font-size: 18px;
-            margin-bottom: 5px;
+            font-size: 16px;
+            margin-bottom: 8px;
             font-weight: bold;
         }
         
-        .position-card p {
+        .team-info p {
             color: #666;
             font-size: 14px;
             margin-bottom: 0;
         }
         
-        .authorization-badge {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        /* Footer */
+        footer {
+            background: #2c3e50;
             color: white;
-            padding: 20px 30px;
-            border-radius: 10px;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+        
+        .footer-widget {
+            flex: 0 0 25%;
+            padding: 0 15px;
+        }
+        
+        .footer-widget h3 {
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+        
+        .footer-widget p, .footer-widget a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            line-height: 2;
+        }
+        
+        .footer-widget a:hover {
+            color: #11998e;
+        }
+        
+        .socail_links ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .socail_links a {
             display: inline-block;
-            margin: 20px 0;
-            font-weight: bold;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            transition: all 0.3s;
+        }
+        
+        .socail_links a:hover {
+            background: #11998e;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.6);
+        }
+        
+        @media (max-width: 768px) {
+            .col-lg-3, .col-lg-4, .col-lg-6 {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+            
+            .hero-section h1 {
+                font-size: 32px;
+            }
+            
+            .section-intro h2 {
+                font-size: 28px;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .footer-widget {
+                flex: 0 0 100%;
+                margin-bottom: 30px;
+            }
         }
     </style>
 </head>
 
 <body>
-       <!-- header-start -->
+
+     <!-- header-start -->
     <header>
         <div class="header-area ">
             <div class="header-top_area">
@@ -309,21 +450,14 @@
         </div>
     </header>
     <!-- header-end -->
-
     <!-- Hero Section -->
     <div class="hero-section">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-10">
-                    <div class="text-center">
-                        <h1>COFADARE Cameroon Branch</h1>
-                        <p>Leading the fight against drug abuse in Cameroon through prevention, support, and rehabilitation. Operating under official authorization and in direct collaboration with the Cameroon government.</p>
-                        <div class="authorization-badge" style="margin-top: 30px;">
-                            <i class="fa fa-certificate" style="margin-right: 10px;"></i>
-                            Authorization N°: 002131/ARDA/JO6/SSAJPA/APPB - 23 October 2025
-                        </div>
-                    </div>
-                </div>
+            <h1>COFADARE Cameroon Branch</h1>
+            <p>Leading the fight against drug abuse in Cameroon through prevention, support, and rehabilitation. Operating under official authorization and in direct collaboration with the Cameroon government.</p>
+            <div class="authorization-badge">
+                <i class="fa fa-certificate" style="margin-right: 10px;"></i>
+                Authorization N°: 002131/ARDA/JO6/SSAJPA/APPB - 23 October 2025
             </div>
         </div>
     </div>
@@ -337,8 +471,8 @@
             </div>
 
             <div class="info-card">
-                <div class="icon-box" style="text-align: left;">
-                    <i class="fa fa-globe" style="font-size: 50px;"></i>
+                <div class="icon-box">
+                    <i class="fa fa-globe"></i>
                 </div>
                 <h3>Our Global Presence</h3>
                 <p>COFADARE, the Commission for Fight Against Drug Abuse and Rehabilitation, is an International non-governmental Organization whose main mission is to fight against drugs and non-substances abuse and rehabilitation of drug victims back into society. Currently, we are hosted in more than 20 countries around the world, making a global impact in the fight against addiction.</p>
@@ -347,8 +481,8 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="info-card">
-                        <div class="icon-box" style="text-align: left;">
-                            <i class="fa fa-users" style="font-size: 50px;"></i>
+                        <div class="icon-box">
+                            <i class="fa fa-users"></i>
                         </div>
                         <h3>A Global Initiative</h3>
                         <p>This movement is a global initiative and action promoted by a group of experts from diverse fields including Health, Education, Transport, Civil Society, Sport, and more. Today, this initiative continuously integrates many societies, other institutions, and government corporations to fight against this pandemic.</p>
@@ -357,8 +491,8 @@
 
                 <div class="col-lg-6">
                     <div class="info-card">
-                        <div class="icon-box" style="text-align: left;">
-                            <i class="fa fa-bullseye" style="font-size: 50px;"></i>
+                        <div class="icon-box">
+                            <i class="fa fa-bullseye"></i>
                         </div>
                         <h3>SDG Alignment</h3>
                         <p>Our work aligns with the Sustainable Development Goals (SDG) Article No. 03: Good Health and Well-being. We are committed to ensuring healthy lives and promoting well-being for all at all ages, with a specific focus on substance abuse prevention and treatment.</p>
@@ -367,8 +501,8 @@
             </div>
 
             <div class="info-card" style="border-top-color: #f44336;">
-                <div class="icon-box" style="text-align: left;">
-                    <i class="fa fa-exclamation-triangle" style="font-size: 50px; color: #f44336;"></i>
+                <div class="icon-box">
+                    <i class="fa fa-exclamation-triangle" style="color: #f44336;"></i>
                 </div>
                 <h3>The Challenge We Address</h3>
                 <p>These actions establish a sustainable mechanism to prevent and suppress substances and non-substances abuse which has highly scoped an impact of spheres for the past centuries with more than 1 billion vulnerable persons worldwide. Our comprehensive approach ensures that we address this crisis from all angles.</p>
@@ -388,205 +522,246 @@
     </div>
 
     <!-- Policy Plan Section -->
-    <div class="container" style="padding: 80px 0;">
-        <div class="section-intro">
-            <h2>Policy Plan</h2>
-            <p>Our comprehensive policy framework guides all our actions and interventions in Cameroon</p>
-        </div>
-
-        <div class="row">
-            <div class="col-lg-3 col-md-6">
-                <div class="policy-card" style="border-top: 5px solid #4CAF50;">
-                    <div class="icon-box">
-                        <i class="fa fa-leaf" style="color: #4CAF50; font-size: 50px;"></i>
-                    </div>
-                    <h4>Sustainable Policy</h4>
-                    <p>Long-term strategies ensuring lasting impact and continuous improvement in our fight against drug abuse</p>
-                </div>
+    <div style="background: #fff; padding: 80px 0;">
+        <div class="container">
+            <div class="section-intro">
+                <h2>Policy Plan</h2>
+                <p>Our comprehensive policy framework guides all our actions and interventions in Cameroon</p>
             </div>
 
-            <div class="col-lg-3 col-md-6">
-                <div class="policy-card" style="border-top: 5px solid #2196F3;">
-                    <div class="icon-box">
-                        <i class="fa fa-shield" style="color: #2196F3; font-size: 50px;"></i>
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="policy-card" style="border-top: 5px solid #4CAF50;">
+                        <div class="icon-box">
+                            <i class="fa fa-leaf" style="color: #4CAF50;"></i>
+                        </div>
+                        <h4>Sustainable Policy</h4>
+                        <p>Long-term strategies ensuring lasting impact and continuous improvement in our fight against drug abuse</p>
                     </div>
-                    <h4>Preventive & Suppressive</h4>
-                    <p>Proactive measures to prevent drug abuse and suppress existing addiction patterns</p>
                 </div>
-            </div>
 
-            <div class="col-lg-3 col-md-6">
-                <div class="policy-card" style="border-top: 5px solid #FF9800;">
-                    <div class="icon-box">
-                        <i class="fa fa-heartbeat" style="color: #FF9800; font-size: 50px;"></i>
+                <div class="col-lg-3">
+                    <div class="policy-card" style="border-top: 5px solid #2196F3;">
+                        <div class="icon-box">
+                            <i class="fa fa-shield" style="color: #2196F3;"></i>
+                        </div>
+                        <h4>Preventive & Suppressive</h4>
+                        <p>Proactive measures to prevent drug abuse and suppress existing addiction patterns</p>
                     </div>
-                    <h4>Support & Management</h4>
-                    <p>Comprehensive care and management systems for individuals struggling with addiction</p>
                 </div>
-            </div>
 
-            <div class="col-lg-3 col-md-6">
-                <div class="policy-card" style="border-top: 5px solid #9C27B0;">
-                    <div class="icon-box">
-                        <i class="fa fa-refresh" style="color: #9C27B0; font-size: 50px;"></i>
+                <div class="col-lg-3">
+                    <div class="policy-card" style="border-top: 5px solid #FF9800;">
+                        <div class="icon-box">
+                            <i class="fa fa-heartbeat" style="color: #FF9800;"></i>
+                        </div>
+                        <h4>Support & Management</h4>
+                        <p>Comprehensive care and management systems for individuals struggling with addiction</p>
                     </div>
-                    <h4>Rehabilitation</h4>
-                    <p>Holistic programs to help individuals recover and successfully reintegrate into society</p>
+                </div>
+
+                <div class="col-lg-3">
+                    <div class="policy-card" style="border-top: 5px solid #9C27B0;">
+                        <div class="icon-box">
+                            <i class="fa fa-refresh" style="color: #9C27B0;"></i>
+                        </div>
+                        <h4>Rehabilitation</h4>
+                        <p>Holistic programs to help individuals recover and successfully reintegrate into society</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Mission of NMB Section -->
+    <!-- Mission Section -->
     <div style="background: #f9f9f9; padding: 80px 0;">
         <div class="container">
             <div class="section-intro">
-                <h2>Mission of National Management Board (NMB)</h2>
-                <p>The NMB ensures proper implementation of organizational policies in accordance with SDG-03, under supervision of IMCB and reporting to GEB.</p>
+                <h2>Mission of Cameroon Branch Board</h2>
+                <p>The Cameroon Branch ensures proper implementation of organizational policies in collaboration with the Cameroon government.</p>
             </div>
 
             <div class="row">
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-4">
                     <div class="mission-card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
                         <div class="icon-box">
-                            <i class="fa fa-graduation-cap" style="color: white; font-size: 50px;"></i>
+                            <i class="fa fa-graduation-cap" style="color: white;"></i>
                         </div>
                         <h4>Prevention</h4>
                         <p>Education and raising awareness about the risks and consequences of drug abuse through comprehensive community programs and school initiatives</p>
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-4">
                     <div class="mission-card" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
                         <div class="icon-box">
-                            <i class="fa fa-medkit" style="color: white; font-size: 50px;"></i>
+                            <i class="fa fa-medkit" style="color: white;"></i>
                         </div>
                         <h4>Treatment</h4>
                         <p>Providing accessible, evidence-based treatment and rehabilitation services for individuals struggling with substance use disorders</p>
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-4">
                     <div class="mission-card" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
                         <div class="icon-box">
-                            <i class="fa fa-users" style="color: white; font-size: 50px;"></i>
+                            <i class="fa fa-users" style="color: white;"></i>
                         </div>
                         <h4>Support</h4>
                         <p>Offering support and resources for individuals, families, and communities affected by drug abuse, ensuring no one faces this challenge alone</p>
                     </div>
                 </div>
-
-                <div class="col-lg-12">
-                    <div class="mission-card" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); min-height: auto;">
-                        <div class="icon-box">
-                            <i class="fa fa-rocket" style="color: white; font-size: 50px;"></i>
-                        </div>
-                        <h4>Rehabilitation</h4>
-                        <p>Empowering individuals to recover and reintegrate into society through holistic rehabilitation programs that address physical, mental, emotional, and social needs</p>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
 
-    <!-- Organizational Chart Section -->
+    <!-- Team Section -->
     <div class="team-section">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="section_title text-center mb-55">
-                        <h3><span>National Management Board</span></h3>
-                    </div>
-                </div>
+            <div class="section-intro">
+                <h2>Cameroon Branch Board</h2>
+                <p>Meet our dedicated leadership team working to combat drug abuse in Cameroon</p>
             </div>
+
             <div class="row">
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-4">
                     <div class="team-member">
-                        <div class="">
-                            <img src="nes.jpg" width="200" height="200" alt="" style="padding-left: 30px;"></i>
-                        </div>
+                        <img src="isidore.jpg" alt="Dr TATSI SOP Isidore">
                         <div class="team-info">
-                            <h5 >M. TOGUE NANA DIPNADA.F</h5>
-                            <p>President/DG/TAIMCB</p>
+                            <h5>Dr TATSI SOP Isidore</h5>
+                            <p>Branch Director/Financial</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
+
+                <div class="col-lg-4">
                     <div class="team-member">
-                        <div class="">
-                            <i class=""> <img src="ngwana.jpg" width="200" height="200" alt=""></i>
-                        </div>
+                        <img src="touomou.jpg" alt="Dr TOUOMOU NYONGHA">
                         <div class="team-info">
-                            <h5>M. NGWANA Yanic Zozong</h5>
-                            <p>V.P/VDG/PJLRPO</p>
+                            <h5>Dr TOUOMOU NYONGHA Pierre Philippe</h5>
+                            <p>Field and Program Coordinator</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
+
+                <div class="col-lg-4">
                     <div class="team-member">
-                        <div class="">
-                            <i class=""> <img src="nchimiyi.jpg" width="200" height="200" alt=""></i>
-                        </div>
+                        <img src="akamba.jpg" alt="Mme AKAMBA FRANCK Virginia">
                         <div class="team-info">
-                            <h5>M. NCHIMINYI INUHU NDZEKA.AH</h5>
+                            <h5>Mme AKAMBA FRANCK Virginia</h5>
                             <p>Secretary General</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
+
+                <div class="col-lg-4">
                     <div class="team-member">
-                        <div class="">
-                            <i class=""> <img src="Abit.jpg" width="200" height="200" alt=""></i>
-                        </div>
+                        <img src="badefoma.jpg" alt="Badefoma Gisele Audrey">
                         <div class="team-info">
-                            <h5>Dr. ABIT Raissa Acha</h5>
-                            <p>Budget and Financial Director</p>
+                            <h5>Badefoma Gisele Audrey Epse Assale</h5>
+                            <p>Communication Officer</p>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="row mt-4">
-                <div class="col-lg-3 col-md-6">
+
+                <div class="col-lg-4">
                     <div class="team-member">
-                        <div class="">
-                           <i class=""> <img src="eyenga.png" width="200" height="200" alt=""></i>
-                        </div>
+                        <img src="tchoffo.jpg" alt="M. TCHOFFO TCHAPNGA">
                         <div class="team-info">
-                            <h5>Mme EYENGA NDONGO Elise Frederique</h5>
-                            <p>Financial Treasurer</p>
+                            <h5>M. TCHOFFO TCHAPNGA Curlis Nitario</h5>
+                            <p>Public Relations Officer</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
+
+                <div class="col-lg-4">
                     <div class="team-member">
-                        <div class="">
-                            <i class=""> <img src="princesse.jpg" width="200" height="200" alt=""></i>
-                        </div>
+                        <img src="hassan.jpg" alt="Mme HASSAN DASSE">
                         <div class="team-info">
-                            <h5>Mme Princesse Soulea Bikok</h5>
-                            <p>Financial Accountant/BD</p>
+                            <h5>Mme HASSAN DASSE</h5>
+                            <p>Medical and Psychiatric Director</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
+
+                <div class="col-lg-4">
                     <div class="team-member">
-                        <div class="">
-                            <i class=""> <img src="kemayo.jpg" width="200" height="200" alt=""></i>
-                        </div>
+                        <img src="nji.jpg" alt="NJINYWAM NGWANIBAH JULIUS">
                         <div class="team-info">
-                            <h5>Mme KEMAYO Morvane Murielle</h5>
-                            <p>Special Advisor.1/DC</p>
+                            <h5>NJINYWAM NGWANIBAH Julius</h5>
+                            <p>Risk and Humanitarian Manager</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
+
+                <div class="col-lg-4">
                     <div class="team-member">
-                        <div class="">
-                            <i class=""> <img src="SOP.jpg" width="200" height="200" alt=""></i>
-                        </div>
+                        <img src="ngwana.jpg" alt="M. NGWANA Yanic Zozong">
                         <div class="team-info">
-                            <h5>Dr TATSI SOP Isidore</h5>
-                            <p>Technical Advisor/DRUNP</p>
+                            <h5>M. NGWANA Yanic Zozong</h5>
+                            <p>Peace, Justice and Legal Right Protection Officer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="team-member">
+                        <img src="fon.jpg" alt="Mr. Fon Francis Suyi">
+                        <div class="team-info">
+                            <h5>Mr. Fon Francis Suyi</h5>
+                            <p>Coordinator and Training Manager</p>
+                        </div>
+                    </div>
+                </div>
+
+                
+
+                <div class="col-lg-4">
+                    <div class="team-member">
+                        <img src="ondoua.jpg" alt="M. ONDOUA RENE Charles">
+                        <div class="team-info">
+                            <h5>M. ONDOUA RENE Charles</h5>
+                            <p>Civil Defense and Security Operation Officer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="team-member">
+                        <img src="okah.jpg" alt="OKAH NJOUH Eric Cinqclear">
+                        <div class="team-info">
+                            <h5>OKAH NJOUH Eric Cinqclear</h5>
+                            <p>Sport Manager</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="team-member">
+                        <img src="IMG-20251126-WA0072.png" alt="M. TOGUE NANA DIPANADA Franklin">
+                        <div class="team-info">
+                            <h5>M. TOGUE NANA DIPANADA Franklin</h5>
+                            <p>Technical Advisor NEB</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="team-member">
+                        <img src="ovambe.jpg" alt="Dr. OVAMBE MBARGA Guy-Bertrand">
+                        <div class="team-info">
+                            <h5>Dr. OVAMBE MBARGA Guy-Bertrand</h5>
+                            <p>Chef deputy of Psychological Care</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="team-member">
+                        <img src="kouamou.jpg" alt="Dr. KOUAMOU WETI Boris Brice">
+                        <div class="team-info">
+                            <h5>Dr. KOUAMOU WETI Boris Brice</h5>
+                            <p>chef deputy of Clinical and Medical service</p>
                         </div>
                     </div>
                 </div>
@@ -594,60 +769,40 @@
         </div>
     </div>
 
-
-    <!-- footer_start -->
-    <footer class="footer">
-        <div class="footer_top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-4 col-md-6 col-lg-4">
-                        <div class="footer_widget">
-                            <div class="footer_logo">
-                                <a href="#">
-                                    <img src="img/WhatsApp Image 2025-04-06 at 22.11.35.jpeg" alt="" width="100" height="100">
-                                </a>
-                            </div>
-                            <p class="address_text">COFADARE creating a better environment for a safety life</p>
-                            <div class="socail_links">
-                                <ul>
-                                    <li><a href="#"><i class="ti-facebook"></i></a></li>
-                                    <li><a href="#"><i class="ti-twitter-alt"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-6 col-lg-3">
-                        <div class="footer_widget">
-                            <h3 class="footer_title">Contacts</h3>
-                            <div class="contacts">
-                                <p>+237 678990076<br>gus@int.com</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-md-6 col-lg-2">
-                        <div class="footer_widget">
-                            <h3 class="footer_title">Services</h3>
-                            <ul class="links">
-                                <li><a href="#">Donate</a></li>
-                                <li><a href="#">Sponsor</a></li>
-                                <li><a href="#">Fundraise</a></li>
-                                <li><a href="#">Volunteer</a></li>
-                                <li><a href="#">Partner</a></li>
-                                <li><a href="#">Jobs</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-6 col-lg-3">
-                        <div class="footer_widget">
-                            <h3 class="footer_title">Location</h3>
-                            <div class="contacts">
-                                <p>Cameroun-Yaounde</p>
-                            </div>
-                        </div>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-widget">
+                    <h3>About COFADARE</h3>
+                    <p>Creating a better environment for a safe life through comprehensive drug abuse prevention and rehabilitation programs.</p>
+                    <div class="socail_links">
+                        <ul>
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                        </ul>
                     </div>
                 </div>
+                <div class="footer-widget">
+                    <h3>Contacts</h3>
+                    <p>+237 678990076<br>cofadare@int.com</p>
+                </div>
+                <div class="footer-widget">
+                    <h3>Services</h3>
+                    <p><a href="#">Donate</a><br>
+                    <a href="#">Volunteer</a><br>
+                    <a href="#">Partner</a></p>
+                </div>
+                <div class="footer-widget">
+                    <h3>Location</h3>
+                    <p>Cameroun - Yaoundé</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 COFADARE Cameroon Branch. All rights reserved.</p>
             </div>
         </div>
-        <div class
+    </footer>
+</body>
+</html>
