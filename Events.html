@@ -1,0 +1,958 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Events & Conferences - Cofadare</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <link rel="stylesheet" href="css/nice-select.css">
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/gijgo.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/slicknav.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        .events-hero {
+            background: linear-gradient(135deg, #eb3349 0%, #f45c43 100%);
+            padding: 100px 0;
+            color: white;
+            text-align: center;
+        }
+        
+        .events-hero h1 {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        .events-hero p {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .objectives-section {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .objective-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+            min-height: 280px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s;
+        }
+        
+        .objective-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+        
+        .objective-card i {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+        
+        .objective-card h4 {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .objective-card p {
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        
+        /* Different colors for each objective */
+        .obj-1 { background: linear-gradient(135deg, #eb3349 0%, #f45c43 100%); }
+        .obj-2 { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+        .obj-3 { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); }
+        .obj-4 { background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); }
+        .obj-5 { background: linear-gradient(135deg, #30cfd0 0%, #330867 100%); }
+        .obj-6 { background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); }
+        .obj-7 { background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%); }
+        .obj-8 { background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); }
+        .obj-9 { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        
+        .conferences-section {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+        
+        .conference-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+            transition: all 0.3s;
+        }
+        
+        .conference-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+        
+        .conference-image {
+            width: 100%;
+            height: 350px;
+            background: linear-gradient(135deg, #eb3349 0%, #f45c43 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .conference-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .image-placeholder {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            z-index: 1;
+        }
+        
+        .image-placeholder i {
+            font-size: 80px;
+            margin-bottom: 15px;
+            opacity: 0.5;
+        }
+        
+        .image-placeholder p {
+            font-size: 16px;
+            margin: 0;
+        }
+        
+        .conference-details {
+            padding: 30px;
+        }
+        
+        .conference-badge {
+            display: inline-block;
+            background: #eb3349;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .conference-title {
+            font-size: 28px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        .info-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .info-row:last-child {
+            border-bottom: none;
+        }
+        
+        .info-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #eb3349 0%, #f45c43 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .info-content h5 {
+            font-size: 14px;
+            font-weight: bold;
+            color: #999;
+            margin-bottom: 5px;
+        }
+        
+        .info-content p {
+            font-size: 16px;
+            color: #333;
+            margin: 0;
+        }
+        
+        .register-btn {
+            background: linear-gradient(135deg, #eb3349 0%, #f45c43 100%);
+            color: white;
+            padding: 12px 40px;
+            border-radius: 25px;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        
+        .register-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(235, 51, 73, 0.4);
+            color: white;
+        }
+        
+        .publications-section {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .publication-item {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s;
+        }
+        
+        .publication-item:hover {
+            background: white;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .pub-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #eb3349 0%, #f45c43 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+        
+        .pub-content h5 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .pub-content p {
+            color: #666;
+            margin: 0;
+            font-size: 14px;
+        }
+        
+        .download-btn {
+            margin-left: auto;
+            background: #eb3349;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 14px;
+            white-space: nowrap;
+        }
+        
+        .download-btn:hover {
+            background: #d62839;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+        <!-- header-start -->
+    <header>
+        <div class="header-area ">
+            <div class="header-top_area">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xl-6 col-md-12 col-lg-8">
+                            
+                        </div>
+                        <div class="col-xl-6 col-md-6 col-lg-4">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="sticky-header" class="main-header-area">
+                <div class="container-fluid">
+                    <div class="row align-items-center">
+                        <div class="col-xl-3 col-lg-3">
+                            <div class="logo">
+                                <a href="index.html">
+                                    <img src="img/WhatsApp Image 2025-04-06 at 22.12.04.jpeg" alt="" width="150" height="50">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xl-9 col-lg-9">
+                            <div class="main-menu">
+                                <nav>
+                                    <ul id="navigation">
+                                        <li><a href="index.html">home</a></li>
+                                        <li><a href="About.html">About</a></li>
+                                        <li><a href="#"> Sectors <i class="ti-angle-down"></i></a>
+                                            <ul class="submenu">
+                                                <li><a href="Education.html">Education</a></li>
+                                                <li><a href="Transport.html">Transport</a></li>
+                                                <li><a href="Health.html">Health</a></li>
+                                                <li><a href="Sport.html">Sport</a></li>
+                                                <li><a href="Agriculture.html">Agriculture</a></li>
+                                                <li><a href="ICT.HTML">Technology</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Actions <i class="ti-angle-down"></i></a>
+                                            <ul class="submenu">
+                                    
+                                                <li><a href="Cause.html" style="font-size: small;">1-Preventive and suppressive phase</a></li>
+                                                <li><a href="Cause1.html" style="font-size: small;">2-Support and management phase</a></li>
+                                                <li><a href="Cause2.html" style="font-size: small;">3-Rehabilitation phase</a></li>
+                                            </ul>
+                                        </li>
+                                        
+                                        <li><a href="#">Projects</a>
+                                         <ul class="submenu">
+                                    
+                                                <li><a href="Project1.html" style="font-size: small;">1-Long term</a></li>
+                                                <li><a href="project.html" style="font-size: small;">2-Short term</a></li>
+
+                                            </ul>
+                                        </li>
+                                        <li><a href="Events.html">Events</a>
+                                         
+                                        </li>
+                                        <li><a href="#">Branches</a>
+                                         <ul class="submenu">
+                                    
+                                                <li><a href="Cameroun.html" style="font-size: small;">Cameroun</a></li>
+                                                <li><a href="#" style="font-size: small;">France</a></li>
+                                                <li><a href="#" style="font-size: small;">Nigeria</a></li>
+
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Contact</a></li>
+                                    </ul>
+                                </nav>
+                                <div class="Appointment">
+                                    <div class="book_btn d-none d-lg-block">
+                                        <a data-scroll-nav='1' href="#">Join Us</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="events-hero">
+        <div class="container">
+            <h1>Conferences & Events</h1>
+            <p>Join us in global discussions on drug abuse prevention, treatment, and rehabilitation. Our conferences bring together experts, policymakers, and communities to share knowledge and shape the future.</p>
+        </div>
+    </div>
+
+    <!-- Objectives Section -->
+    <div class="objectives-section">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8">
+                    <div class="section_title text-center">
+                        <h3><span>Conference Objectives</span></h3>
+                        <p style="margin-top: 20px;">Our conferences serve multiple purposes in the global fight against drug abuse</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="objective-card obj-1">
+                        <i class="fa fa-bullhorn"></i>
+                        <h4>Raise Awareness</h4>
+                        <p>Educate the public and stakeholders about the impacts of drug abuse and the importance of prevention and treatment</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="objective-card obj-2">
+                        <i class="fa fa-book"></i>
+                        <h4>Share Knowledge</h4>
+                        <p>Facilitate the exchange of research findings, best practices, and innovative approaches in addiction treatment</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="objective-card obj-3">
+                        <i class="fa fa-users"></i>
+                        <h4>Foster Collaboration</h4>
+                        <p>Build networks among professionals, organizations, and communities working in addiction prevention and recovery</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="objective-card obj-4">
+                        <i class="fa fa-gavel"></i>
+                        <h4>Inform Policy</h4>
+                        <p>Influence policy development and legislation through evidence-based recommendations and advocacy</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="objective-card obj-5">
+                        <i class="fa fa-graduation-cap"></i>
+                        <h4>Support Education and Training</h4>
+                        <p>Provide professional development opportunities for healthcare workers, educators, and community leaders</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="objective-card obj-6">
+                        <i class="fa fa-heart"></i>
+                        <h4>Promote Empathy and Understanding</h4>
+                        <p>Reduce stigma and promote compassionate approaches to addiction and recovery</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="objective-card obj-7">
+                        <i class="fa fa-lightbulb-o"></i>
+                        <h4>Identify Solutions</h4>
+                        <p>Develop innovative strategies and practical solutions to address emerging challenges in drug abuse</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="objective-card obj-8">
+                        <i class="fa fa-medkit"></i>
+                        <h4>Improve Treatment and Support</h4>
+                        <p>Enhance the quality and accessibility of treatment services and support systems</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Conferences Section -->
+    <div class="conferences-section">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8">
+                    <div class="section_title text-center">
+                        <h3><span>Upcoming & Past Conferences</span></h3>
+                        <p style="margin-top: 20px;">Explore our conference calendar and access resources from previous events</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Conference 1 -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <div class="conference-card">
+                        <div class="row g-0">
+                            <div class="col-lg-5">
+                                <div class="conference-image">
+                                    <div class="image-placeholder">
+                                        <i class="fa fa-image"></i>
+                                        <p>Insert Conference Photo Here</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-7">
+                                <div class="conference-details">
+                                    <span class="conference-badge">UPCOMING EVENT</span>
+                                    <h3 class="conference-title">International Conference on Drug Abuse Prevention and Rehabilitation 2025</h3>
+                                    
+                                    <div class="info-row">
+                                        <div class="info-icon">
+                                            <i class="fa fa-book"></i>
+                                        </div>
+                                        <div class="info-content">
+                                            <h5>TOPIC</h5>
+                                            <p>Innovative Approaches to Youth Drug Prevention</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="info-row">
+                                        <div class="info-icon">
+                                            <i class="fa fa-calendar"></i>
+                                        </div>
+                                        <div class="info-content">
+                                            <h5>DATE</h5>
+                                            <p>June 15-17, 2025</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="info-row">
+                                        <div class="info-icon">
+                                            <i class="fa fa-map-marker"></i>
+                                        </div>
+                                        <div class="info-content">
+                                            <h5>HOST COUNTRY</h5>
+                                            <p>Cameroon - Yaoundé</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="info-row">
+                                        <div class="info-icon">
+                                            <i class="fa fa-handshake-o"></i>
+                                        </div>
+                                        <div class="info-content">
+                                            <h5>PARTNERS</h5>
+                                            <p>WHO, UNODC, Ministry of Health, Local NGOs</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <a href="#" class="register-btn">Register Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Conference 2 -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <div class="conference-card">
+                        <div class="row g-0">
+                            <div class="col-lg-5">
+                                <div class="conference-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                                    <div class="image-placeholder">
+                                        <i class="fa fa-image"></i>
+                                        <p>Insert Conference Photo Here</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-7">
+                                <div class="conference-details">
+                                    <span class="conference-badge" style="background: #4facfe;">PAST EVENT</span>
+                                    <h3 class="conference-title">African Summit on Substance Abuse Recovery 2024</h3>
+                                    
+                                    <div class="info-row">
+                                        <div class="info-icon" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                                            <i class="fa fa-book"></i>
+                                        </div>
+                                        <div class="info-content">
+                                            <h5>TOPIC</h5>
+                                            <p>Community-Based Recovery Models in Africa</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="info-row">
+                                        <div class="info-icon" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                                            <i class="fa fa-calendar"></i>
+                                        </div>
+                                        <div class="info-content">
+                                            <h5>DATE</h5>
+                                            <p>November 10-12, 2024</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="info-row">
+                                        <div class="info-icon" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                                            <i class="fa fa-map-marker"></i>
+                                        </div>
+                                        <div class="info-content">
+                                            <h5>HOST COUNTRY</h5>
+                                            <p>Kenya - Nairobi</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="info-row">
+                                        <div class="info-icon" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                                            <i class="fa fa-handshake-o"></i>
+                                        </div>
+                                        <div class="info-content">
+                                            <h5>PARTNERS</h5>
+                                            <p>African Union, UN, Regional Health Authorities</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <a href="#" class="register-btn" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">View Summary</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Conference 3 -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <div class="conference-card">
+                        <div class="row g-0">
+                            <div class="col-lg-5">
+                                <div class="conference-image" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                                    <div class="image-placeholder">
+                                        <i class="fa fa-image"></i>
+                                        <p>Insert Conference Photo Here</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-7">
+                                <div class="conference-details">
+                                    <span class="conference-badge" style="background: #43e97b;">UPCOMING EVENT</span>
+                                    <h3 class="conference-title">Global Youth Empowerment Against Drugs 2025</h3>
+                                    
+                                    <div class="info-row">
+                                        <div class="info-icon" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                                            <i class="fa fa-book"></i>
+                                        </div>
+                                        <div class="info-content">
+                                            <h5>TOPIC</h5>
+                                            <p>Youth Leadership in Drug Prevention Programs</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="info-row">
+                                        <div class="info-icon" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                                            <i class="fa fa-calendar"></i>
+                                        </div>
+                                        <div class="info-content">
+                                            <h5>DATE</h5>
+                                            <p>September 20-22, 2025</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="info-row">
+                                        <div class="info-icon" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                                            <i class="fa fa-map-marker"></i>
+                                        </div>
+                                        <div class="info-content">
+                                            <h5>HOST COUNTRY</h5>
+                                            <p>Ghana - Accra</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="info-row">
+                                        <div class="info-icon" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                                            <i class="fa fa-handshake-o"></i>
+                                        </div>
+                                        <div class="info-content">
+                                            <h5>PARTNERS</h5>
+                                            <p>UNESCO, UNICEF, Youth Organizations</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <a href="#" class="register-btn" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">Register Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Publications Section -->
+    <div class="publications-section">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8">
+                    <div class="section_title text-center">
+                        <h3><span>Publications Related to Drugs</span></h3>
+                        <p style="margin-top: 20px;">Access research papers, policy briefs, and reports from our conferences</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="publication-item">
+                        <div class="pub-icon">
+                            <i class="fa fa-file-pdf-o"></i>
+                        </div>
+                        <div class="pub-content">
+                            <h5>Family Support in Addiction Recovery Programs</h5>
+                            <p>Conference Proceedings - 2024</p>
+                        </div>
+                        <a href="#" class="download-btn"><i class="fa fa-download"></i> Download</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="publication-item">
+                        <div class="pub-icon">
+                            <i class="fa fa-file-pdf-o"></i>
+                        </div>
+                        <div class="pub-content">
+                            <h5>Global Trends in Substance Abuse 2024</h5>
+                            <p>Annual Report - 2024</p>
+                        </div>
+                        <a href="#" class="download-btn"><i class="fa fa-download"></i> Download</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Last Conference Highlights -->
+    <div class="conferences-section" style="background: white;">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8">
+                    <div class="section_title text-center">
+                        <h3><span>Last Conference Highlights</span></h3>
+                        <p style="margin-top: 20px;">View memorable moments from our most recent conference</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="conference-card">
+                        <div class="conference-image" style="height: 250px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                            <div class="image-placeholder">
+                                <i class="fa fa-camera"></i>
+                                <p>Conference Photo 1</p>
+                            </div>
+                        </div>
+                        <div class="conference-details">
+                            <p style="margin: 0; text-align: center;">Opening Ceremony</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="conference-card">
+                        <div class="conference-image" style="height: 250px; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                            <div class="image-placeholder">
+                                <i class="fa fa-camera"></i>
+                                <p>Conference Photo 2</p>
+                            </div>
+                        </div>
+                        <div class="conference-details">
+                            <p style="margin: 0; text-align: center;">Panel Discussion</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="conference-card">
+                        <div class="conference-image" style="height: 250px; background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                            <div class="image-placeholder">
+                                <i class="fa fa-camera"></i>
+                                <p>Conference Photo 3</p>
+                            </div>
+                        </div>
+                        <div class="conference-details">
+                            <p style="margin: 0; text-align: center;">Networking Session</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="conference-card">
+                        <div class="conference-image" style="height: 250px; background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                            <div class="image-placeholder">
+                                <i class="fa fa-camera"></i>
+                                <p>Conference Photo 4</p>
+                            </div>
+                        </div>
+                        <div class="conference-details">
+                            <p style="margin: 0; text-align: center;">Workshop Activities</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="conference-card">
+                        <div class="conference-image" style="height: 250px; background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                            <div class="image-placeholder">
+                                <i class="fa fa-camera"></i>
+                                <p>Conference Photo 5</p>
+                            </div>
+                        </div>
+                        <div class="conference-details">
+                            <p style="margin: 0; text-align: center;">Award Ceremony</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="conference-card">
+                        <div class="conference-image" style="height: 250px; background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);">
+                            <div class="image-placeholder">
+                                <i class="fa fa-camera"></i>
+                                <p>Conference Photo 6</p>
+                            </div>
+                        </div>
+                        <div class="conference-details">
+                            <p style="margin: 0; text-align: center;">Closing Remarks</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="make_donation_area section_padding" style="background: linear-gradient(135deg, #eb3349 0%, #f45c43 100%);">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="section_title text-center mb-55">
+                        <h3 style="color: white;"><span style="color: white;">Join Our Next Conference</span></h3>
+                        <p style="margin-top: 20px; font-size: 18px; color: white;">Be part of the global movement to combat drug abuse. Register now for our upcoming conferences and contribute to the conversation.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-6 text-center mb-4">
+                    <i class="fa fa-ticket" style="font-size: 60px; color: white; margin-bottom: 20px;"></i>
+                    <h4 style="color: white; margin-bottom: 15px;">Register as Participant</h4>
+                    <a href="#" class="boxed-btn4">Register Now</a>
+                </div>
+                <div class="col-lg-4 col-md-6 text-center mb-4">
+                    <i class="fa fa-microphone" style="font-size: 60px; color: white; margin-bottom: 20px;"></i>
+                    <h4 style="color: white; margin-bottom: 15px;">Become a Speaker</h4>
+                    <a href="#" class="boxed-btn4">Apply Now</a>
+                </div>
+                <div class="col-lg-4 col-md-6 text-center mb-4">
+                    <i class="fa fa-handshake-o" style="font-size: 60px; color: white; margin-bottom: 20px;"></i>
+                    <h4 style="color: white; margin-bottom: 15px;">Partner with Us</h4>
+                    <a href="#" class="boxed-btn4">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer_start -->
+    <footer class="footer">
+        <div class="footer_top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-4 col-md-6 col-lg-4">
+                        <div class="footer_widget">
+                            <div class="footer_logo">
+                                <a href="#">
+                                    <img src="img/WhatsApp Image 2025-04-06 at 22.11.35.jpeg" alt="" width="100" height="100">
+                                </a>
+                            </div>
+                            <p class="address_text">COFADARE creating a better environment for a safety life</p>
+                            <div class="socail_links">
+                                <ul>
+                                    <li><a href="#"><i class="ti-facebook"></i></a></li>
+                                    <li><a href="#"><i class="ti-twitter-alt"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 col-lg-3">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">Contacts</h3>
+                            <div class="contacts">
+                                <p>+237 678990076<br>gus@int.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-md-6 col-lg-2">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">Services</h3>
+                            <ul class="links">
+                                <li><a href="#">Donate</a></li>
+                                <li><a href="#">Sponsor</a></li>
+                                <li><a href="#">Fundraise</a></li>
+                                <li><a href="#">Volunteer</a></li>
+                                <li><a href="#">Partner</a></li>
+                                <li><a href="#">Jobs</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 col-lg-3">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">Location</h3>
+                            <div class="contacts">
+                                <p>Cameroun-Yaoundé</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copy-right_text">
+            <div class="container">
+                <div class="row">
+                    <div class="bordered_1px"></div>
+                    <div class="col-xl-12">
+                        <p class="copy_right text-center">
+                            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This website is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Dol</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer_end -->
+
+    <!-- JS here -->
+    <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/ajax-form.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/scrollIt.js"></script>
+    <script src="js/jquery.scrollUp.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/nice-select.min.js"></script>
+    <script src="js/jquery.slicknav.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/gijgo.min.js"></script>
+    <script src="js/contact.js"></script>
+    <script src="js/jquery.ajaxchimp.min.js"></script>
+    <script src="js/jquery.form.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/mail-script.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,618 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Rehabilitation Phase - Cofadare</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <link rel="stylesheet" href="css/nice-select.css">
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/gijgo.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/slicknav.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        .hero-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 0;
+            margin-top: 0;
+        }
+        
+        .hero-section h1 {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .hero-section p {
+            font-size: 20px;
+            color: rgba(255,255,255,0.95);
+            line-height: 1.8;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .mechanism-card {
+            background: #fff;
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-left: 5px solid #4CAF50;
+        }
+        
+        .mechanism-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .mechanism-card h3 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 26px;
+            font-weight: bold;
+        }
+        
+        .mechanism-card p {
+            color: #666;
+            line-height: 1.8;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        
+        .mechanism-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .mechanism-card ul li {
+            padding: 12px 0;
+            padding-left: 35px;
+            position: relative;
+            color: #555;
+            font-size: 15px;
+        }
+        
+        .mechanism-card ul li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4CAF50;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        
+        .section-intro {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 60px;
+        }
+        
+        .section-intro h2 {
+            font-size: 40px;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        
+        .section-intro p {
+            font-size: 18px;
+            color: #666;
+            line-height: 1.8;
+        }
+        
+        .icon-box {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        
+        .icon-box i {
+            font-size: 60px;
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+        
+        .process-step {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .process-step:before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: rgba(255,255,255,0.1);
+            transform: rotate(45deg);
+        }
+        
+        .process-step h4 {
+            color: white;
+            font-size: 24px;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .process-step p {
+            color: rgba(255,255,255,0.95);
+            font-size: 16px;
+            line-height: 1.8;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .process-step .step-number {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 60px;
+            font-weight: bold;
+            color: rgba(255,255,255,0.2);
+            z-index: 0;
+        }
+        
+        .integration-section {
+            background: #f9f9f9;
+            padding: 80px 0;
+        }
+        
+        .support-area {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            padding: 80px 0;
+            color: white;
+        }
+        
+        .support-card {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 35px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255,255,255,0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .support-card:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-5px);
+        }
+        
+        .support-card h4 {
+            color: white;
+            font-size: 22px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        
+        .support-card p {
+            color: rgba(255,255,255,0.95);
+            font-size: 15px;
+            line-height: 1.8;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 80px 0;
+            color: white;
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            color: white;
+            font-size: 38px;
+            margin-bottom: 25px;
+        }
+        
+        .cta-section p {
+            color: rgba(255,255,255,0.95);
+            font-size: 18px;
+            margin-bottom: 35px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- header-start -->
+        <!-- header-start -->
+    <header>
+        <div class="header-area ">
+            <div class="header-top_area">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xl-6 col-md-12 col-lg-8">
+                            
+                        </div>
+                        <div class="col-xl-6 col-md-6 col-lg-4">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="sticky-header" class="main-header-area">
+                <div class="container-fluid">
+                    <div class="row align-items-center">
+                        <div class="col-xl-3 col-lg-3">
+                            <div class="logo">
+                                <a href="index.html">
+                                    <img src="img/WhatsApp Image 2025-04-06 at 22.12.04.jpeg" alt="" width="150" height="50">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xl-9 col-lg-9">
+                            <div class="main-menu">
+                                <nav>
+                                    <ul id="navigation">
+                                        <li><a href="index.html">home</a></li>
+                                        <li><a href="About.html">About</a></li>
+                                        <li><a href="#"> Sectors <i class="ti-angle-down"></i></a>
+                                            <ul class="submenu">
+                                                <li><a href="Education.html">Education</a></li>
+                                                <li><a href="Transport.html">Transport</a></li>
+                                                <li><a href="Health.html">Health</a></li>
+                                                <li><a href="Sport.html">Sport</a></li>
+                                                <li><a href="Agriculture.html">Agriculture</a></li>
+                                                <li><a href="ICT.HTML">Technology</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Actions <i class="ti-angle-down"></i></a>
+                                            <ul class="submenu">
+                                    
+                                                <li><a href="Cause.html" style="font-size: small;">1-Preventive and suppressive phase</a></li>
+                                                <li><a href="Cause1.html" style="font-size: small;">2-Support and management phase</a></li>
+                                                <li><a href="Cause2.html" style="font-size: small;">3-Rehabilitation phase</a></li>
+                                            </ul>
+                                        </li>
+                                        
+                                        <li><a href="#">Projects</a>
+                                         <ul class="submenu">
+                                    
+                                                <li><a href="Project1.html" style="font-size: small;">1-Long term</a></li>
+                                                <li><a href="project.html" style="font-size: small;">2-Short term</a></li>
+
+                                            </ul>
+                                        </li>
+                                        <li><a href="Events.html">Events</a>
+                                         
+                                        </li>
+                                        <li><a href="#">Branches</a>
+                                         <ul class="submenu">
+                                    
+                                                <li><a href="Cameroun.html" style="font-size: small;">Cameroun</a></li>
+                                                <li><a href="#" style="font-size: small;">France</a></li>
+                                                <li><a href="#" style="font-size: small;">Nigeria</a></li>
+
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Contact</a></li>
+                                    </ul>
+                                </nav>
+                                <div class="Appointment">
+                                    <div class="book_btn d-none d-lg-block">
+                                        <a data-scroll-nav='1' href="#">Join Us</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header-end -->
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="text-center">
+                        <h1>Rehabilitation Phase</h1>
+                        <p>Socio-economic integration of drug addicts is a complex process that involves various mechanisms to support individuals in overcoming addiction and reintegrating into society.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Introduction Section -->
+    <div class="container" style="padding: 80px 0;">
+        <div class="section-intro">
+            <h2>Rebuilding Lives, Restoring Hope</h2>
+            <p>Our rehabilitation program goes beyond recovery. We focus on comprehensive socio-economic integration, providing the tools, support, and opportunities necessary for individuals to rebuild their lives and become productive members of society once again.</p>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="icon-box">
+                    <i class="fa fa-refresh"></i>
+                </div>
+                <h4 style="text-align: center; color: #2c3e50; margin-bottom: 15px;">Holistic Recovery</h4>
+                <p style="text-align: center; color: #666;">Comprehensive approach addressing physical, mental, and social well-being</p>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="icon-box">
+                    <i class="fa fa-briefcase"></i>
+                </div>
+                <h4 style="text-align: center; color: #2c3e50; margin-bottom: 15px;">Economic Integration</h4>
+                <p style="text-align: center; color: #666;">Vocational training and employment opportunities for sustainable independence</p>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="icon-box">
+                    <i class="fa fa-group"></i>
+                </div>
+                <h4 style="text-align: center; color: #2c3e50; margin-bottom: 15px;">Social Reintegration</h4>
+                <p style="text-align: center; color: #666;">Reconnecting individuals with families, communities, and society</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Integration Mechanisms Section -->
+    <div class="integration-section">
+        <div class="container">
+            <div class="section-intro">
+                <h2>Socio-Economic Integration Mechanisms</h2>
+                <p>Our multi-faceted approach ensures that every individual receives personalized support tailored to their unique needs and circumstances.</p>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="mechanism-card">
+                        <div class="icon-box" style="text-align: left;">
+                            <i class="fa fa-graduation-cap" style="font-size: 50px;"></i>
+                        </div>
+                        <h3>Vocational Training & Skill Development</h3>
+                        <p>Empowering individuals with marketable skills for economic independence and self-sufficiency.</p>
+                        <ul>
+                            <li>Professional certification programs in various trades</li>
+                            <li>Computer literacy and digital skills training</li>
+                            <li>Entrepreneurship development and business skills</li>
+                            <li>Apprenticeship programs with local businesses</li>
+                            <li>Continuous skill upgrading and mentorship</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="mechanism-card">
+                        <div class="icon-box" style="text-align: left;">
+                            <i class="fa fa-user-md" style="font-size: 50px;"></i>
+                        </div>
+                        <h3>Psychological & Social Support</h3>
+                        <p>Addressing mental health needs and rebuilding social connections for lasting recovery.</p>
+                        <ul>
+                            <li>Individual and group counseling sessions</li>
+                            <li>Peer support groups and recovery communities</li>
+                            <li>Family therapy and relationship rebuilding</li>
+                            <li>Life skills coaching and personal development</li>
+                            <li>Relapse prevention strategies and coping mechanisms</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="mechanism-card">
+                        <div class="icon-box" style="text-align: left;">
+                            <i class="fa fa-home" style="font-size: 50px;"></i>
+                        </div>
+                        <h3>Housing & Transitional Support</h3>
+                        <p>Providing safe, stable living environments during the critical transition period.</p>
+                        <ul>
+                            <li>Transitional housing facilities with supervision</li>
+                            <li>Assistance with permanent housing placement</li>
+                            <li>Life skills training for independent living</li>
+                            <li>Financial literacy and budgeting education</li>
+                            <li>Community integration support services</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="mechanism-card">
+                        <div class="icon-box" style="text-align: left;">
+                            <i class="fa fa-handshake-o" style="font-size: 50px;"></i>
+                        </div>
+                        <h3>Employment Placement & Follow-up</h3>
+                        <p>Connecting recovered individuals with meaningful employment opportunities and ongoing support.</p>
+                        <ul>
+                            <li>Job placement services and career counseling</li>
+                            <li>Resume writing and interview preparation</li>
+                            <li>Partnerships with employers for job opportunities</li>
+                            <li>Workplace support and advocacy</li>
+                            <li>Long-term follow-up and career advancement support</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="mechanism-card">
+                        <div class="icon-box" style="text-align: left;">
+                            <i class="fa fa-university" style="font-size: 50px;"></i>
+                        </div>
+                        <h3>Legal & Administrative Support</h3>
+                        <p>Assisting with legal matters and administrative procedures for full social reintegration.</p>
+                        <ul>
+                            <li>Legal counseling and representation services</li>
+                            <li>Assistance with identity documentation</li>
+                            <li>Support for clearing legal records where applicable</li>
+                            <li>Access to social services and benefits</li>
+                            <li>Advocacy for rights and fair treatment</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="mechanism-card">
+                        <div class="icon-box" style="text-align: left;">
+                            <i class="fa fa-heart" style="font-size: 50px;"></i>
+                        </div>
+                        <h3>Community Engagement Programs</h3>
+                        <p>Fostering community acceptance and creating opportunities for meaningful participation.</p>
+                        <ul>
+                            <li>Community service and volunteer opportunities</li>
+                            <li>Cultural and recreational activities</li>
+                            <li>Sports programs and wellness activities</li>
+                            <li>Community awareness and stigma reduction campaigns</li>
+                            <li>Peer mentorship for new program participants</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rehabilitation Process Steps -->
+    <div class="container" style="padding: 80px 0;">
+        <div class="section-intro">
+            <h2>Our Rehabilitation Process</h2>
+            <p>A structured, step-by-step approach to ensure successful and sustainable recovery.</p>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="process-step" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                    <span class="step-number">01</span>
+                    <div class="icon-box">
+                        <i class="fa fa-check-square-o" style="color: white; font-size: 45px;"></i>
+                    </div>
+                    <h4>Assessment & Planning</h4>
+                    <p>Comprehensive evaluation of individual needs, strengths, and challenges to create personalized rehabilitation plans.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="process-step" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                    <span class="step-number">02</span>
+                    <div class="icon-box">
+                        <i class="fa fa-cogs" style="color: white; font-size: 45px;"></i>
+                    </div>
+                    <h4>Active Rehabilitation</h4>
+                    <p>Intensive skill development, counseling, and support services to build foundations for independent living.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="process-step" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                    <span class="step-number">03</span>
+                    <div class="icon-box">
+                        <i class="fa fa-rocket" style="color: white; font-size: 45px;"></i>
+                    </div>
+                    <h4>Transition & Integration</h4>
+                    <p>Gradual transition into community life with ongoing support, employment placement, and monitoring.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="process-step" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                    <span class="step-number">04</span>
+                    <div class="icon-box">
+                        <i class="fa fa-line-chart" style="color: white; font-size: 45px;"></i>
+                    </div>
+                    <h4>Follow-up & Monitoring</h4>
+                    <p>Continuous support and monitoring to prevent relapse and ensure sustained progress in recovery journey.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="process-step" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                    <span class="step-number">05</span>
+                    <div class="icon-box">
+                        <i class="fa fa-trophy" style="color: white; font-size: 45px;"></i>
+                    </div>
+                    <h4>Independence & Success</h4>
+                    <p>Achieving full social and economic independence with the skills and support to maintain long-term recovery.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="process-step" style="background: linear-gradient(135deg, #ff9a56 0%, #ff6a88 100%);">
+                    <span class="step-number">06</span>
+                    <div class="icon-box">
+                        <i class="fa fa-users" style="color: white; font-size: 45px;"></i>
+                    </div>
+                    <h4>Community Leadership</h4>
+                    <p>Opportunities to give back through peer mentorship and community advocacy, inspiring others on their recovery journey.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Support Services Section -->
+    <div class="support-area">
+        <div class="container">
+            <div class="section-intro">
+                <h2 style="color: white;">Comprehensive Support Services</h2>
+                <p style="color: rgba(255,255,255,0.95);">We provide a complete ecosystem of support to ensure every individual has the resources they need to succeed.</p>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="support-card">
+                        <div class="icon-box">
+                            <i class="fa fa-stethoscope" style="color: white; font-size: 40px;"></i>
+                        </div>
+                        <h4>Medical Care</h4>
+                        <p>Ongoing health monitoring and treatment for physical and mental health conditions</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="support-card">
+                        <div class="icon-box">
+                            <i class="fa fa-money" style="color: white; font-size: 40px;"></i>
+                        </div>
+                        <h4>Financial Assistance</h4>
+                        <p>Emergency financial support and microfinance opportunities for entrepreneurship</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="support-card">
+                        <div class="icon-box">
+                            <i class="fa fa-book" style="color: white; font-size: 40px;"></i>
+                        </div>
+                        <h4>Education Support</h4>
+                        <p>Access to formal education, literacy programs, and continuing education opportunities</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="support-card">
+                        <div class="icon-box">
+                            <i class="fa fa-phone" style="color: white; font-size: 40px;"></i>
+                        </div>
+                        <h4>24/7 Hotline</h4>
+                        <p>Round-the-clock crisis support and counseling services for emergency situations</p>
+                    </div>
+                </div>
+            </div>
+        </div
