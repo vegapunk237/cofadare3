@@ -1043,7 +1043,7 @@ h3 {
 
 /* line 110, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_slick-nav.scss */
 .slicknav_btn {
-  background-color: transparent;
+  background-color: red;
   cursor: pointer;
   margin-bottom: 10px;
   position: relative;
@@ -6808,3 +6808,4 @@ h6 {
 }
 
 /*# sourceMappingURL=style.css.map */
+

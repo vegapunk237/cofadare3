@@ -1,6 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="zxx">
-
+<html class="no-js" lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -32,61 +31,55 @@
     <link rel="stylesheet" href="css/slicknav.css">
     <link rel="stylesheet" href="css/style.css">
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        
-        
-        /* Hero Section */
+<style>
         .hero-section {
-            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            background: linear-gradient(135deg, #02290f 0%, #38f9d7 100%);
             color: white;
             padding: 80px 0;
-            text-align: center;
+            margin-top: 0;
         }
         
         .hero-section h1 {
             font-size: 48px;
             font-weight: bold;
             margin-bottom: 20px;
+            color: white;
         }
         
         .hero-section p {
             font-size: 20px;
+            color: rgba(255,255,255,0.95);
             line-height: 1.8;
             max-width: 900px;
-            margin: 0 auto 30px;
+            margin: 0 auto;
         }
         
-        .authorization-badge {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            color: white;
-            padding: 20px 30px;
-            border-radius: 10px;
-            display: inline-block;
+        .therapy-card {
+            background: #fff;
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-top: 5px solid #4CAF50;
+        }
+        
+        .therapy-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .therapy-card h3 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 26px;
             font-weight: bold;
         }
         
-        /* History Section */
-        .history-section {
-            background: #fff;
-            padding: 80px 0;
+        .therapy-card p {
+            color: #666;
+            line-height: 1.8;
+            font-size: 16px;
         }
         
         .section-intro {
@@ -108,261 +101,73 @@
             line-height: 1.8;
         }
         
-        .info-card {
-            background: #fff;
-            border-radius: 15px;
-            padding: 40px;
-            margin-bottom: 30px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            border-top: 5px solid #11998e;
-        }
-        
-        .info-card h3 {
-            color: #2c3e50;
-            margin-bottom: 20px;
-            font-size: 26px;
-            font-weight: bold;
-        }
-        
-        .info-card p {
-            color: #666;
-            line-height: 1.8;
-            font-size: 16px;
+        .icon-box {
+            text-align: center;
+            margin-bottom: 25px;
         }
         
         .icon-box i {
-            font-size: 50px;
-            color: #11998e;
+            font-size: 60px;
+            color: #4CAF50;
             margin-bottom: 20px;
         }
         
-        .row {
-            display: flex;
-            flex-wrap: wrap;
-            margin: 0 -15px;
-        }
-        
-        .col-lg-6 {
-            flex: 0 0 50%;
-            max-width: 50%;
-            padding: 0 15px;
-        }
-        
-        .col-lg-3, .col-lg-4 {
-            flex: 0 0 33.333%;
-            max-width: 33.333%;
-            padding: 0 15px;
-        }
-        
-        .col-lg-12 {
-            flex: 0 0 100%;
-            max-width: 100%;
-            padding: 0 15px;
-        }
-        
-        /* Vision Section */
-        .vision-section {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        .info-section {
+            background: #f9f9f9;
             padding: 80px 0;
-            color: white;
-            text-align: center;
         }
         
-        .vision-section h2 {
+        .benefit-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            font-size: 40px;
+            border-radius: 15px;
+            padding: 35px;
             margin-bottom: 30px;
+            text-align: center;
+            min-height: 280px;
         }
         
-        .vision-section p {
+        .benefit-card h4 {
+            color: white;
             font-size: 22px;
-            line-height: 1.8;
-            max-width: 900px;
-            margin: 0 auto;
+            margin-bottom: 15px;
+            font-weight: bold;
         }
         
-        /* Policy Cards */
-        .policy-card {
+        .benefit-card p {
+            color: rgba(255,255,255,0.95);
+            font-size: 15px;
+            line-height: 1.8;
+        }
+        
+        .feature-card {
             background: #fff;
             border-radius: 15px;
             padding: 40px;
             margin-bottom: 30px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             text-align: center;
-            transition: all 0.3s ease;
         }
         
-        .policy-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-        }
-        
-        .policy-card h4 {
+        .feature-card h4 {
             color: #2c3e50;
             font-size: 22px;
             margin-bottom: 15px;
             font-weight: bold;
         }
         
-        /* Mission Cards */
-        .mission-card {
-            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            color: white;
-            border-radius: 15px;
-            padding: 35px;
-            margin-bottom: 30px;
-            min-height: 250px;
-        }
-        
-        .mission-card h4 {
-            color: white;
-            font-size: 22px;
-            margin-bottom: 15px;
-            font-weight: bold;
-        }
-        
-        .mission-card p {
-            color: rgba(255,255,255,0.95);
+        .feature-card p {
+            color: #666;
             font-size: 15px;
             line-height: 1.8;
         }
-        
-        /* Team Section */
-        .team-section {
-            background: #f9f9f9;
-            padding: 80px 0;
-        }
-        
-        .team-member {
-            background: #fff;
-            border-radius: 10px;
-            padding: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-        
-        .team-member:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
-        }
-        
-        .team-member img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 20px;
-            border: 5px solid #11998e;
-        }
-        
-        .team-info h5 {
-            color: #2c3e50;
-            font-size: 16px;
-            margin-bottom: 8px;
-            font-weight: bold;
-        }
-        
-        .team-info p {
-            color: #666;
-            font-size: 14px;
-            margin-bottom: 0;
-        }
-        
-        /* Footer */
-        footer {
-            background: #2c3e50;
-            color: white;
-            padding: 60px 0 20px;
-        }
-        
-        .footer-content {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            margin-bottom: 40px;
-        }
-        
-        .footer-widget {
-            flex: 0 0 25%;
-            padding: 0 15px;
-        }
-        
-        .footer-widget h3 {
-            margin-bottom: 20px;
-            font-size: 20px;
-        }
-        
-        .footer-widget p, .footer-widget a {
-            color: rgba(255,255,255,0.8);
-            text-decoration: none;
-            line-height: 2;
-        }
-        
-        .footer-widget a:hover {
-            color: #11998e;
-        }
-        
-        .socail_links ul {
-            list-style: none;
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .socail_links a {
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 50%;
-            text-align: center;
-            line-height: 40px;
-            transition: all 0.3s;
-        }
-        
-        .socail_links a:hover {
-            background: #11998e;
-        }
-        
-        .footer-bottom {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            color: rgba(255,255,255,0.6);
-        }
-        
-        @media (max-width: 768px) {
-            .col-lg-3, .col-lg-4, .col-lg-6 {
-                flex: 0 0 100%;
-                max-width: 100%;
-            }
-            
-            .hero-section h1 {
-                font-size: 32px;
-            }
-            
-            .section-intro h2 {
-                font-size: 28px;
-            }
-            
-            nav ul {
-                flex-direction: column;
-                gap: 10px;
-            }
-            
-            .footer-widget {
-                flex: 0 0 100%;
-                margin-bottom: 30px;
-            }
-        }
     </style>
-</head>
+    </head>
 
 <body>
-        <!-- header-start -->
-    <header>
+
+     <!-- header-start -->
+     <header>
         <div class="header-area ">
             <div class="header-top_area">
                 <div class="container-fluid">
@@ -450,8 +255,6 @@
         </div>
     </header>
     <!-- header-end -->
-
-
     <!-- Hero Section -->
     <div class="hero-section">
         <div class="container">
@@ -464,7 +267,7 @@
         </div>
     </div>
 
-   <!-- History Section -->
+    <!-- History Section -->
     <div class="history-section">
         <div class="container">
             <div class="section-intro">
@@ -807,31 +610,5 @@
             </div>
         </div>
     </footer>
-
-    <!-- JS here -->
-    <script src="js/vendor/modernizr-3.5.0.min.js"></script>
-    <script src="js/vendor/jquery-1.12.4.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/isotope.pkgd.min.js"></script>
-    <script src="js/ajax-form.js"></script>
-    <script src="js/waypoints.min.js"></script>
-    <script src="js/jquery.counterup.min.js"></script>
-    <script src="js/imagesloaded.pkgd.min.js"></script>
-    <script src="js/scrollIt.js"></script>
-    <script src="js/jquery.scrollUp.min.js"></script>
-    <script src="js/wow.min.js"></script>
-    <script src="js/nice-select.min.js"></script>
-    <script src="js/jquery.slicknav.min.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/gijgo.min.js"></script>
-    <script src="js/contact.js"></script>
-    <script src="js/jquery.ajaxchimp.min.js"></script>
-    <script src="js/jquery.validate.min.js"></script>
-    <script src="js/mail-script.js"></script>
-    <script src="js/main.js"></script>
 </body>
-
 </html>
