@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <!-- CSS here -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -236,7 +237,6 @@
             box-shadow: 0 5px 20px rgba(0,0,0,0.15);
         }
 
-        /* Avatar icon style replacing photos */
         .avatar-icon {
             width: 150px;
             height: 150px;
@@ -323,30 +323,497 @@
             border-top: 1px solid rgba(255,255,255,0.1);
             color: rgba(255,255,255,0.6);
         }
-        
+
+        /* =============================================
+           REPORT OF ACTIVITIES SECTION
+           ============================================= */
+        .activities-section {
+            background: #0d1b2a;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .activities-section::before {
+            content: '';
+            position: absolute;
+            top: -200px;
+            right: -200px;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(17,153,142,0.12) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .activities-section::after {
+            content: '';
+            position: absolute;
+            bottom: -150px;
+            left: -100px;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(118,75,162,0.10) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .activities-header {
+            text-align: center;
+            margin-bottom: 70px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .activities-header .eyebrow {
+            display: inline-block;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #11998e;
+            background: rgba(17,153,142,0.1);
+            border: 1px solid rgba(17,153,142,0.3);
+            padding: 6px 18px;
+            border-radius: 50px;
+            margin-bottom: 22px;
+        }
+
+        .activities-header h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 52px;
+            font-weight: 900;
+            color: #ffffff;
+            line-height: 1.15;
+            margin-bottom: 18px;
+        }
+
+        .activities-header h2 span {
+            background: linear-gradient(135deg, #11998e, #38ef7d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .activities-header p {
+            font-size: 16px;
+            color: rgba(255,255,255,0.5);
+            max-width: 500px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* Year selector */
+        .year-selector {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 50px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .year-selector label {
+            color: rgba(255,255,255,0.5);
+            font-size: 13px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .year-selector select {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.12);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 15px;
+            font-family: 'DM Sans', sans-serif;
+            cursor: pointer;
+            outline: none;
+            transition: border-color 0.3s;
+            appearance: none;
+            -webkit-appearance: none;
+            padding-right: 36px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2311998e' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+        }
+
+        .year-selector select:focus {
+            border-color: #11998e;
+        }
+
+        .year-selector select option {
+            background: #1a2a3a;
+        }
+
+        /* Stats bar */
+        .activities-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 60px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .stat-pill {
+            text-align: center;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px;
+            padding: 16px 28px;
+        }
+
+        .stat-pill .num {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: #11998e;
+            display: block;
+        }
+
+        .stat-pill .lbl {
+            font-size: 11px;
+            color: rgba(255,255,255,0.4);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Months grid */
+        .months-grid {
+            display: grid;
+            gap: 12px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Month accordion item */
+        .month-item {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: border-color 0.3s, background 0.3s;
+        }
+
+        .month-item.active {
+            background: rgba(17,153,142,0.06);
+            border-color: rgba(17,153,142,0.35);
+        }
+
+        .month-trigger {
+            display: flex;
+            align-items: center;
+            padding: 22px 30px;
+            cursor: pointer;
+            user-select: none;
+            transition: background 0.2s;
+            gap: 20px;
+        }
+
+        .month-trigger:hover {
+            background: rgba(255,255,255,0.03);
+        }
+
+        .month-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 13px;
+            font-weight: 700;
+            color: rgba(255,255,255,0.2);
+            min-width: 28px;
+        }
+
+        .month-name {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 17px;
+            font-weight: 600;
+            color: #fff;
+            flex: 1;
+        }
+
+        .month-item.active .month-name {
+            color: #38ef7d;
+        }
+
+        .month-badge {
+            font-size: 11px;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 600;
+            color: #11998e;
+            background: rgba(17,153,142,0.15);
+            border: 1px solid rgba(17,153,142,0.25);
+            padding: 4px 12px;
+            border-radius: 50px;
+            letter-spacing: 0.5px;
+        }
+
+        .month-badge.empty {
+            color: rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.04);
+            border-color: rgba(255,255,255,0.08);
+        }
+
+        .month-chevron {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.35s cubic-bezier(0.4,0,0.2,1), background 0.2s;
+        }
+
+        .month-item.active .month-chevron {
+            transform: rotate(180deg);
+            background: rgba(17,153,142,0.2);
+        }
+
+        .month-chevron svg {
+            width: 14px;
+            height: 14px;
+            stroke: rgba(255,255,255,0.5);
+        }
+
+        .month-item.active .month-chevron svg {
+            stroke: #11998e;
+        }
+
+        /* Month body */
+        .month-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0.4,0,0.2,1);
+        }
+
+        .month-body.open {
+            max-height: 2000px;
+        }
+
+        .month-body-inner {
+            padding: 0 30px 28px;
+        }
+
+        .month-divider {
+            height: 1px;
+            background: rgba(255,255,255,0.06);
+            margin-bottom: 24px;
+        }
+
+        /* No activities */
+        .no-activities {
+            text-align: center;
+            padding: 30px;
+            color: rgba(255,255,255,0.25);
+            font-size: 14px;
+            font-style: italic;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        /* Activity cards */
+        .activity-list {
+            display: grid;
+            gap: 14px;
+        }
+
+        .activity-card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px;
+            padding: 20px 24px;
+            display: flex;
+            align-items: flex-start;
+            gap: 18px;
+            transition: border-color 0.25s, background 0.25s, transform 0.25s;
+            animation: slideIn 0.35s ease both;
+        }
+
+        .activity-card:hover {
+            border-color: rgba(17,153,142,0.4);
+            background: rgba(17,153,142,0.06);
+            transform: translateX(4px);
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .activity-card:nth-child(1) { animation-delay: 0.04s; }
+        .activity-card:nth-child(2) { animation-delay: 0.08s; }
+        .activity-card:nth-child(3) { animation-delay: 0.12s; }
+        .activity-card:nth-child(4) { animation-delay: 0.16s; }
+
+        .activity-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 18px;
+        }
+
+        .activity-icon.type-prevention  { background: rgba(17,153,142,0.15); color: #11998e; }
+        .activity-icon.type-treatment    { background: rgba(244,67,54,0.15);  color: #f44336; }
+        .activity-icon.type-support      { background: rgba(33,150,243,0.15); color: #2196f3; }
+        .activity-icon.type-training     { background: rgba(255,152,0,0.15);  color: #ff9800; }
+        .activity-icon.type-community    { background: rgba(156,39,176,0.15); color: #9c27b0; }
+        .activity-icon.type-partnership  { background: rgba(76,175,80,0.15);  color: #4caf50; }
+        .activity-icon.type-event        { background: rgba(255,193,7,0.15);  color: #ffc107; }
+        .activity-icon.type-outreach     { background: rgba(0,188,212,0.15);  color: #00bcd4; }
+
+        .activity-content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .activity-title {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 5px;
+            line-height: 1.4;
+        }
+
+        .activity-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 6px;
+        }
+
+        .activity-meta span {
+            font-size: 12px;
+            color: rgba(255,255,255,0.4);
+            font-family: 'DM Sans', sans-serif;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .activity-meta span i {
+            font-size: 11px;
+            color: #11998e;
+        }
+
+        .activity-desc {
+            font-size: 13px;
+            color: rgba(255,255,255,0.45);
+            font-family: 'DM Sans', sans-serif;
+            line-height: 1.6;
+        }
+
+        .activity-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            align-items: flex-end;
+            flex-shrink: 0;
+        }
+
+        .activity-type-tag {
+            font-size: 10px;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 3px 10px;
+            border-radius: 50px;
+        }
+
+        .tag-prevention  { color: #11998e; background: rgba(17,153,142,0.12); }
+        .tag-treatment   { color: #f44336; background: rgba(244,67,54,0.12); }
+        .tag-support     { color: #2196f3; background: rgba(33,150,243,0.12); }
+        .tag-training    { color: #ff9800; background: rgba(255,152,0,0.12); }
+        .tag-community   { color: #9c27b0; background: rgba(156,39,176,0.12); }
+        .tag-partnership { color: #4caf50; background: rgba(76,175,80,0.12); }
+        .tag-event       { color: #ffc107; background: rgba(255,193,7,0.12); }
+        .tag-outreach    { color: #00bcd4; background: rgba(0,188,212,0.12); }
+
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            background: transparent;
+            border: 1px solid rgba(17,153,142,0.4);
+            color: #11998e;
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .btn-download:hover {
+            background: #11998e;
+            color: #fff;
+            border-color: #11998e;
+            box-shadow: 0 4px 16px rgba(17,153,142,0.35);
+            transform: translateY(-1px);
+            text-decoration: none;
+        }
+
+        .btn-download i {
+            font-size: 11px;
+        }
+
+        /* Download toast notification */
+        .toast-notif {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #0d2b26;
+            border: 1px solid rgba(17,153,142,0.5);
+            color: #fff;
+            padding: 14px 22px;
+            border-radius: 12px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 14px;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+            transform: translateY(80px);
+            opacity: 0;
+            transition: all 0.35s cubic-bezier(0.4,0,0.2,1);
+        }
+
+        .toast-notif.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .toast-notif i {
+            color: #11998e;
+            font-size: 16px;
+        }
+
         @media (max-width: 768px) {
             .col-lg-3, .col-lg-4, .col-lg-6 {
                 flex: 0 0 100%;
                 max-width: 100%;
             }
-            
-            .hero-section h1 {
-                font-size: 32px;
-            }
-            
-            .section-intro h2 {
-                font-size: 28px;
-            }
-            
-            nav ul {
-                flex-direction: column;
-                gap: 10px;
-            }
-            
-            .footer-widget {
-                flex: 0 0 100%;
-                margin-bottom: 30px;
-            }
+            .hero-section h1 { font-size: 32px; }
+            .section-intro h2 { font-size: 28px; }
+            nav ul { flex-direction: column; gap: 10px; }
+            .footer-widget { flex: 0 0 100%; margin-bottom: 30px; }
+            .activities-header h2 { font-size: 34px; }
+            .activities-stats { flex-wrap: wrap; gap: 12px; }
+            .activity-card { flex-direction: column; }
+            .activity-actions { flex-direction: row; align-items: center; }
+            .month-trigger { padding: 18px 20px; }
+            .month-body-inner { padding: 0 16px 20px; }
         }
     </style>
 </head>
@@ -407,7 +874,6 @@
                                             <ul class="submenu">
                                                 <li><a href="Cameroun.html" style="font-size: small;">Cameroun</a></li>
                                                 <li><a href="#" style="font-size: small;">Nigeria</a></li>
-                                                <li><a href="#" style="font-size: small;">Nigeria</a></li>
                                             </ul>
                                         </li>
                                         <li><a href="#">Contact</a></li>
@@ -447,9 +913,7 @@
             </div>
 
             <div class="info-card">
-                <div class="icon-box">
-                    <i class="fa fa-globe"></i>
-                </div>
+                <div class="icon-box"><i class="fa fa-globe"></i></div>
                 <h3>Our Global Presence</h3>
                 <p>ICOFADARE, the international Commission for Fight Against Drug Abuse and Rehabilitation, is an International non-governmental Organization whose main mission is to fight against drugs and non-substances abuse and rehabilitation of drug victims back into society. Currently, we are hosted in more than 20 countries around the world, making a global impact in the fight against addiction.</p>
             </div>
@@ -457,19 +921,14 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="info-card">
-                        <div class="icon-box">
-                            <i class="fa fa-users"></i>
-                        </div>
+                        <div class="icon-box"><i class="fa fa-users"></i></div>
                         <h3>A Global Initiative</h3>
                         <p>This movement is a global initiative and action promoted by a group of experts from diverse fields including Health, Education, Transport, Civil Society, Sport, and more. Today, this initiative continuously integrates many societies, other institutions, and government corporations to fight against this pandemic.</p>
                     </div>
                 </div>
-
                 <div class="col-lg-6">
                     <div class="info-card">
-                        <div class="icon-box">
-                            <i class="fa fa-bullseye"></i>
-                        </div>
+                        <div class="icon-box"><i class="fa fa-bullseye"></i></div>
                         <h3>SDG Alignment</h3>
                         <p>Our work aligns with the Sustainable Development Goals (SDG) Article No. 03: Good Health and Well-being. We are committed to ensuring healthy lives and promoting well-being for all at all ages, with a specific focus on substance abuse prevention and treatment.</p>
                     </div>
@@ -477,9 +936,7 @@
             </div>
 
             <div class="info-card" style="border-top-color: #f44336;">
-                <div class="icon-box">
-                    <i class="fa fa-exclamation-triangle" style="color: #f44336;"></i>
-                </div>
+                <div class="icon-box"><i class="fa fa-exclamation-triangle" style="color: #f44336;"></i></div>
                 <h3>The Challenge We Address</h3>
                 <p>These actions establish a sustainable mechanism to prevent and suppress substances and non-substances abuse which has highly scoped an impact of spheres for the past centuries with more than 1 billion vulnerable persons worldwide. Our comprehensive approach ensures that we address this crisis from all angles.</p>
             </div>
@@ -489,9 +946,7 @@
     <!-- Vision Section -->
     <div class="vision-section">
         <div class="container">
-            <div class="icon-box">
-                <i class="fa fa-eye" style="color: white; font-size: 70px;"></i>
-            </div>
+            <div class="icon-box"><i class="fa fa-eye" style="color: white; font-size: 70px;"></i></div>
             <h2>Our Vision</h2>
             <p>A world free from drug abuse, where individuals and communities thrive, and those affected by substance use disorders receive comprehensive support and care.</p>
         </div>
@@ -504,43 +959,31 @@
                 <h2>Policy Plan</h2>
                 <p>Our comprehensive policy framework guides all our actions and interventions in Nigeria</p>
             </div>
-
             <div class="row">
                 <div class="col-lg-3">
                     <div class="policy-card" style="border-top: 5px solid #4CAF50;">
-                        <div class="icon-box">
-                            <i class="fa fa-leaf" style="color: #4CAF50;"></i>
-                        </div>
+                        <div class="icon-box"><i class="fa fa-leaf" style="color: #4CAF50;"></i></div>
                         <h4>Sustainable Policy</h4>
                         <p>Long-term strategies ensuring lasting impact and continuous improvement in our fight against drug abuse</p>
                     </div>
                 </div>
-
                 <div class="col-lg-3">
                     <div class="policy-card" style="border-top: 5px solid #2196F3;">
-                        <div class="icon-box">
-                            <i class="fa fa-shield" style="color: #2196F3;"></i>
-                        </div>
+                        <div class="icon-box"><i class="fa fa-shield" style="color: #2196F3;"></i></div>
                         <h4>Preventive &amp; Suppressive</h4>
                         <p>Proactive measures to prevent drug abuse and suppress existing addiction patterns</p>
                     </div>
                 </div>
-
                 <div class="col-lg-3">
                     <div class="policy-card" style="border-top: 5px solid #FF9800;">
-                        <div class="icon-box">
-                            <i class="fa fa-heartbeat" style="color: #FF9800;"></i>
-                        </div>
+                        <div class="icon-box"><i class="fa fa-heartbeat" style="color: #FF9800;"></i></div>
                         <h4>Support &amp; Management</h4>
                         <p>Comprehensive care and management systems for individuals struggling with addiction</p>
                     </div>
                 </div>
-
                 <div class="col-lg-3">
                     <div class="policy-card" style="border-top: 5px solid #9C27B0;">
-                        <div class="icon-box">
-                            <i class="fa fa-refresh" style="color: #9C27B0;"></i>
-                        </div>
+                        <div class="icon-box"><i class="fa fa-refresh" style="color: #9C27B0;"></i></div>
                         <h4>Rehabilitation</h4>
                         <p>Holistic programs to help individuals recover and successfully reintegrate into society</p>
                     </div>
@@ -556,33 +999,24 @@
                 <h2>Mission of Nigeria Branch Board</h2>
                 <p>The Nigeria Branch ensures proper implementation of organizational policies in collaboration with the Nigeria government.</p>
             </div>
-
             <div class="row">
                 <div class="col-lg-4">
                     <div class="mission-card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
-                        <div class="icon-box">
-                            <i class="fa fa-graduation-cap" style="color: white;"></i>
-                        </div>
+                        <div class="icon-box"><i class="fa fa-graduation-cap" style="color: white;"></i></div>
                         <h4>Prevention</h4>
                         <p>Education and raising awareness about the risks and consequences of drug abuse through comprehensive community programs and school initiatives</p>
                     </div>
                 </div>
-
                 <div class="col-lg-4">
                     <div class="mission-card" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
-                        <div class="icon-box">
-                            <i class="fa fa-medkit" style="color: white;"></i>
-                        </div>
+                        <div class="icon-box"><i class="fa fa-medkit" style="color: white;"></i></div>
                         <h4>Treatment</h4>
                         <p>Providing accessible, evidence-based treatment and rehabilitation services for individuals struggling with substance use disorders</p>
                     </div>
                 </div>
-
                 <div class="col-lg-4">
                     <div class="mission-card" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
-                        <div class="icon-box">
-                            <i class="fa fa-users" style="color: white;"></i>
-                        </div>
+                        <div class="icon-box"><i class="fa fa-users" style="color: white;"></i></div>
                         <h4>Support</h4>
                         <p>Offering support and resources for individuals, families, and communities affected by drug abuse, ensuring no one faces this challenge alone</p>
                     </div>
@@ -598,176 +1032,74 @@
                 <h2>Nigeria Branch Board</h2>
                 <p>Meet our dedicated leadership team working to combat drug abuse in Nigeria</p>
             </div>
-
             <div class="row">
-
-                <div class="col-lg-4">
-                    <div class="team-member">
-                        <div class="avatar-icon">
-                            <i class="fa fa-user"></i>
-                        </div>
-                        <div class="team-info">
-                            <p>Director</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4">
-                    <div class="team-member">
-                        <div class="avatar-icon">
-                            <i class="fa fa-user"></i>
-                        </div>
-                        <div class="team-info">
-                            <p>Field and Program Coordinator</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4">
-                    <div class="team-member">
-                        <div class="avatar-icon">
-                            <i class="fa fa-user"></i>
-                        </div>
-                        <div class="team-info">
-                            <p>Secretary General</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4">
-                    <div class="team-member">
-                        <div class="avatar-icon">
-                            <i class="fa fa-user"></i>
-                        </div>
-                        <div class="team-info">
-                            <p>Communication Officer</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4">
-                    <div class="team-member">
-                        <div class="avatar-icon">
-                            <i class="fa fa-user"></i>
-                        </div>
-                        <div class="team-info">
-                            <p>Public Relations Officer</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4">
-                    <div class="team-member">
-                        <div class="avatar-icon">
-                            <i class="fa fa-user"></i>
-                        </div>
-                        <div class="team-info">
-                            <p>Psychosocial Officer</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4">
-                    <div class="team-member">
-                        <div class="avatar-icon">
-                            <i class="fa fa-user"></i>
-                        </div>
-                        <div class="team-info">
-                            <p>Disaster, Risk and Humanitarian Officer</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4">
-                    <div class="team-member">
-                        <div class="avatar-icon">
-                            <i class="fa fa-user"></i>
-                        </div>
-                        <div class="team-info">
-                            <p>Justice and Legal Right Officer</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4">
-                    <div class="team-member">
-                        <div class="avatar-icon">
-                            <i class="fa fa-user"></i>
-                        </div>
-                        <div class="team-info">
-                            <p>Coordinator and Training Manager</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4">
-                    <div class="team-member">
-                        <div class="avatar-icon">
-                            <i class="fa fa-user"></i>
-                        </div>
-                        <div class="team-info">
-                            <p>Civil Defense and Security Operation Officer</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4">
-                    <div class="team-member">
-                        <div class="avatar-icon">
-                            <i class="fa fa-user"></i>
-                        </div>
-                        <div class="team-info">
-                            <p>Sport Manager</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4">
-                    <div class="team-member">
-                        <div class="avatar-icon">
-                            <i class="fa fa-user"></i>
-                        </div>
-                        <div class="team-info">
-                            <p>Project Manager</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4">
-                    <div class="team-member">
-                        <div class="avatar-icon">
-                            <i class="fa fa-user"></i>
-                        </div>
-                        <div class="team-info">
-                            <p>Psychological Assistant Officer</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4">
-                    <div class="team-member">
-                        <div class="avatar-icon">
-                            <i class="fa fa-user"></i>
-                        </div>
-                        <div class="team-info">
-                            <p>Psychiatric Assistant Officer</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4">
-                    <div class="team-member">
-                        <div class="avatar-icon">
-                            <i class="fa fa-user"></i>
-                        </div>
-                        <div class="team-info">
-                            <p>Clinical and Medical Officer</p>
-                        </div>
-                    </div>
-                </div>
-
+                <div class="col-lg-4"><div class="team-member"><div class="avatar-icon"><i class="fa fa-user"></i></div><div class="team-info"><p>Director</p></div></div></div>
+                <div class="col-lg-4"><div class="team-member"><div class="avatar-icon"><i class="fa fa-user"></i></div><div class="team-info"><p>Field and Program Coordinator</p></div></div></div>
+                <div class="col-lg-4"><div class="team-member"><div class="avatar-icon"><i class="fa fa-user"></i></div><div class="team-info"><p>Secretary General</p></div></div></div>
+                <div class="col-lg-4"><div class="team-member"><div class="avatar-icon"><i class="fa fa-user"></i></div><div class="team-info"><p>Communication Officer</p></div></div></div>
+                <div class="col-lg-4"><div class="team-member"><div class="avatar-icon"><i class="fa fa-user"></i></div><div class="team-info"><p>Public Relations Officer</p></div></div></div>
+                <div class="col-lg-4"><div class="team-member"><div class="avatar-icon"><i class="fa fa-user"></i></div><div class="team-info"><p>Psychosocial Officer</p></div></div></div>
+                <div class="col-lg-4"><div class="team-member"><div class="avatar-icon"><i class="fa fa-user"></i></div><div class="team-info"><p>Disaster, Risk and Humanitarian Officer</p></div></div></div>
+                <div class="col-lg-4"><div class="team-member"><div class="avatar-icon"><i class="fa fa-user"></i></div><div class="team-info"><p>Justice and Legal Right Officer</p></div></div></div>
+                <div class="col-lg-4"><div class="team-member"><div class="avatar-icon"><i class="fa fa-user"></i></div><div class="team-info"><p>Coordinator and Training Manager</p></div></div></div>
+                <div class="col-lg-4"><div class="team-member"><div class="avatar-icon"><i class="fa fa-user"></i></div><div class="team-info"><p>Civil Defense and Security Operation Officer</p></div></div></div>
+                <div class="col-lg-4"><div class="team-member"><div class="avatar-icon"><i class="fa fa-user"></i></div><div class="team-info"><p>Sport Manager</p></div></div></div>
+                <div class="col-lg-4"><div class="team-member"><div class="avatar-icon"><i class="fa fa-user"></i></div><div class="team-info"><p>Project Manager</p></div></div></div>
+                <div class="col-lg-4"><div class="team-member"><div class="avatar-icon"><i class="fa fa-user"></i></div><div class="team-info"><p>Psychological Assistant Officer</p></div></div></div>
+                <div class="col-lg-4"><div class="team-member"><div class="avatar-icon"><i class="fa fa-user"></i></div><div class="team-info"><p>Psychiatric Assistant Officer</p></div></div></div>
+                <div class="col-lg-4"><div class="team-member"><div class="avatar-icon"><i class="fa fa-user"></i></div><div class="team-info"><p>Clinical and Medical Officer</p></div></div></div>
             </div>
         </div>
+    </div>
+
+    <!-- =============================================
+         REPORT OF ACTIVITIES SECTION
+         ============================================= -->
+    <section class="activities-section" id="report-activities">
+        <div class="container">
+
+            <!-- Header -->
+            <div class="activities-header">
+                <div class="eyebrow">Nigeria Branch · 2025</div>
+                <h2>Report of <span>Activities</span></h2>
+                <p>Monthly overview of all programs, campaigns, and interventions carried out by the Nigeria Branch.</p>
+            </div>
+
+            <!-- Year selector -->
+            <div class="year-selector">
+                <label>Year :</label>
+                <select id="yearSelect" onchange="changeYear(this.value)">
+                    <option value="2025" selected>2025</option>
+                    <option value="2024">2024</option>
+                    <option value="2023">2023</option>
+                </select>
+            </div>
+
+            <!-- Stats bar -->
+            <div class="activities-stats" id="statsBar">
+                <div class="stat-pill">
+                    <span class="num" id="statTotal">0</span>
+                    <span class="lbl">Total Activities</span>
+                </div>
+                <div class="stat-pill">
+                    <span class="num" id="statMonths">0</span>
+                    <span class="lbl">Active Months</span>
+                </div>
+                <div class="stat-pill">
+                    <span class="num" id="statReports">0</span>
+                    <span class="lbl">Reports Available</span>
+                </div>
+            </div>
+
+            <!-- Accordion months -->
+            <div class="months-grid" id="monthsGrid"></div>
+        </div>
+    </section>
+
+    <!-- Toast notification -->
+    <div class="toast-notif" id="toastNotif">
+        <i class="fa fa-check-circle"></i>
+        <span id="toastMsg">Rapport téléchargé avec succès</span>
     </div>
 
     <!-- Footer -->
@@ -787,13 +1119,11 @@
                 </div>
                 <div class="footer-widget">
                     <h3>Contacts</h3>
-                    <p>+1 (240) 665-8756 /+237693558538<br><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4f2c20292e2b2e3d2a0f26213b612c2022">[email&#160;protected]</a></p>
+                    <p>+1 (240) 665-8756 / +237693558538<br>info@icofadare.org</p>
                 </div>
                 <div class="footer-widget">
                     <h3>Services</h3>
-                    <p><a href="#">Donate</a><br>
-                    <a href="#">Volunteer</a><br>
-                    <a href="#">Partner</a></p>
+                    <p><a href="#">Donate</a><br><a href="#">Volunteer</a><br><a href="#">Partner</a></p>
                 </div>
                 <div class="footer-widget">
                     <h3>Location</h3>
@@ -806,23 +1136,396 @@
         </div>
     </footer>
 
-    <!-- JS here -->
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/vendor/modernizr-3.5.0.min.js"></script>
-    <script src="js/vendor/jquery-1.12.4.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/isotope.pkgd.min.js"></script>
-    <script src="js/ajax-form.js"></script>
-    <script src="js/waypoints.min.js"></script>
-    <script src="js/jquery.counterup.min.js"></script>
-    <script src="js/imagesloaded.pkgd.min.js"></script>
-    <script src="js/scrollIt.js"></script>
-    <script src="js/jquery.scrollUp.min.js"></script>
-    <script src="js/wow.min.js"></script>
-    <script src="js/nice-select.min.js"></script>
-    <script src="js/jquery.slicknav.min.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/gijgo.min.js"></script>
-    <script src="js/conta
+    <!-- JS -->
+    <script>
+    // ====================================================
+    // DATA — Activities per year/month
+    // To add real activities: add entries in activitiesData
+    // ====================================================
+    const activitiesData = {
+        2025: {
+            1: [
+                {
+                    title: "New Year Awareness Campaign",
+                    date: "Jan 5, 2025",
+                    location: "Lagos State",
+                    participants: "320 persons",
+                    type: "prevention",
+                    icon: "fa-bullhorn",
+                    desc: "Door-to-door campaign raising awareness on drug dangers and distributing educational flyers in 12 communities.",
+                    reportFile: "report_jan_2025_awareness.pdf"
+                },
+                {
+                    title: "School Outreach Program – Secondary Schools",
+                    date: "Jan 15–18, 2025",
+                    location: "Abuja FCT",
+                    participants: "850 students",
+                    type: "outreach",
+                    icon: "fa-graduation-cap",
+                    desc: "Series of sensitization talks delivered in 6 secondary schools targeting at-risk youth groups.",
+                    reportFile: "report_jan_2025_schools.pdf"
+                },
+                {
+                    title: "Rehabilitation Intake Assessment",
+                    date: "Jan 22, 2025",
+                    location: "Kano",
+                    participants: "47 beneficiaries",
+                    type: "treatment",
+                    icon: "fa-medkit",
+                    desc: "Medical and psychosocial intake assessment for new rehabilitation program enrollees.",
+                    reportFile: "report_jan_2025_rehab.pdf"
+                }
+            ],
+            2: [
+                {
+                    title: "Community Training Workshop",
+                    date: "Feb 8, 2025",
+                    location: "Port Harcourt",
+                    participants: "120 community leaders",
+                    type: "training",
+                    icon: "fa-users",
+                    desc: "Training of community volunteers and local leaders on identifying and reporting substance abuse cases.",
+                    reportFile: "report_feb_2025_training.pdf"
+                },
+                {
+                    title: "Partnership MOU Signing Ceremony",
+                    date: "Feb 20, 2025",
+                    location: "Abuja FCT",
+                    participants: "Government officials",
+                    type: "partnership",
+                    icon: "fa-handshake-o",
+                    desc: "Formal signing of Memorandum of Understanding with the National Drug Law Enforcement Agency (NDLEA).",
+                    reportFile: "report_feb_2025_mou.pdf"
+                }
+            ],
+            3: [
+                {
+                    title: "Free Medical Consultation Day",
+                    date: "Mar 1, 2025",
+                    location: "Ogun State",
+                    participants: "200 patients",
+                    type: "support",
+                    icon: "fa-hospital-o",
+                    desc: "Free medical consultations and psychological assessments for individuals affected by substance use disorders.",
+                    reportFile: "report_mar_2025_medical.pdf"
+                },
+                {
+                    title: "Women and Families Support Group Launch",
+                    date: "Mar 12, 2025",
+                    location: "Enugu",
+                    participants: "85 families",
+                    type: "community",
+                    icon: "fa-heart",
+                    desc: "Launch of dedicated support group for families and women directly affected by a family member's drug dependency.",
+                    reportFile: "report_mar_2025_families.pdf"
+                },
+                {
+                    title: "Radio Awareness Program",
+                    date: "Mar 21, 2025",
+                    location: "National (Radio)",
+                    participants: "Est. 50,000 listeners",
+                    type: "prevention",
+                    icon: "fa-microphone",
+                    desc: "Live radio broadcast across 5 FM stations discussing drug prevention, treatment options, and ICOFADARE services.",
+                    reportFile: "report_mar_2025_radio.pdf"
+                }
+            ],
+            4: [
+                {
+                    title: "Youth Sports Against Drugs Tournament",
+                    date: "Apr 5–6, 2025",
+                    location: "Lagos State",
+                    participants: "420 youth",
+                    type: "event",
+                    icon: "fa-trophy",
+                    desc: "2-day inter-community football and athletics tournament promoting a drug-free lifestyle among youth aged 14–25.",
+                    reportFile: "report_apr_2025_sports.pdf"
+                },
+                {
+                    title: "Volunteer Recruitment & Orientation",
+                    date: "Apr 19, 2025",
+                    location: "Ibadan",
+                    participants: "68 new volunteers",
+                    type: "training",
+                    icon: "fa-user-plus",
+                    desc: "Orientation session for newly recruited field volunteers covering protocols, ethics, and community engagement methods.",
+                    reportFile: "report_apr_2025_volunteers.pdf"
+                }
+            ],
+            5: [
+                {
+                    title: "World Anti-Drugs Day Preparation Event",
+                    date: "May 10, 2025",
+                    location: "Kaduna",
+                    participants: "250 participants",
+                    type: "prevention",
+                    icon: "fa-flag",
+                    desc: "Preparatory mobilization event ahead of World Anti-Drugs Day including stakeholder meetings and media briefings.",
+                    reportFile: "report_may_2025_antidrugs.pdf"
+                },
+                {
+                    title: "Legal Rights Awareness Session",
+                    date: "May 24, 2025",
+                    location: "Benin City",
+                    participants: "160 persons",
+                    type: "community",
+                    icon: "fa-balance-scale",
+                    desc: "Session informing drug-affected individuals and families about their legal rights, protections, and available recourse.",
+                    reportFile: "report_may_2025_legal.pdf"
+                }
+            ],
+            6: [
+                {
+                    title: "World Drug Report Day — Public March",
+                    date: "Jun 26, 2025",
+                    location: "Abuja FCT",
+                    participants: "1,200+ participants",
+                    type: "event",
+                    icon: "fa-globe",
+                    desc: "Public awareness march and ceremony marking the International Day Against Drug Abuse and Illicit Trafficking.",
+                    reportFile: "report_jun_2025_worldday.pdf"
+                },
+                {
+                    title: "Rehabilitation Program Mid-Year Review",
+                    date: "Jun 18, 2025",
+                    location: "Kano",
+                    participants: "Board members & staff",
+                    type: "treatment",
+                    icon: "fa-line-chart",
+                    desc: "Internal mid-year review of rehabilitation program outcomes, patient progress, and adjustment of care plans.",
+                    reportFile: "report_jun_2025_review.pdf"
+                }
+            ],
+            7: [],
+            8: [
+                {
+                    title: "Back-to-School Drug Prevention Campaign",
+                    date: "Aug 25, 2025",
+                    location: "Nationwide",
+                    participants: "2,000+ students",
+                    type: "prevention",
+                    icon: "fa-book",
+                    desc: "National back-to-school campaign deploying trained educators and counselors to secondary schools across 6 states.",
+                    reportFile: "report_aug_2025_backtoschool.pdf"
+                }
+            ],
+            9: [],
+            10: [],
+            11: [],
+            12: []
+        },
+        2024: {
+            1: [
+                {
+                    title: "Annual Strategy Planning Meeting",
+                    date: "Jan 10, 2024",
+                    location: "Abuja FCT",
+                    participants: "Board members",
+                    type: "partnership",
+                    icon: "fa-calendar",
+                    desc: "Annual planning session to define key priorities, targets and budget allocation for 2024 activities.",
+                    reportFile: "report_jan_2024_planning.pdf"
+                }
+            ],
+            2: [],
+            3: [],
+            4: [],
+            5: [],
+            6: [],
+            7: [],
+            8: [],
+            9: [],
+            10: [],
+            11: [],
+            12: []
+        },
+        2023: {
+            1: [], 2: [], 3: [], 4: [], 5: [], 6: [],
+            7: [], 8: [], 9: [], 10: [], 11: [], 12: []
+        }
+    };
+
+    const monthNames = [
+        "January","February","March","April","May","June",
+        "July","August","September","October","November","December"
+    ];
+
+    const typeLabels = {
+        prevention: "Prevention", treatment: "Treatment", support: "Support",
+        training: "Training", community: "Community", partnership: "Partnership",
+        event: "Event", outreach: "Outreach"
+    };
+
+    let currentYear = 2025;
+
+    function changeYear(year) {
+        currentYear = parseInt(year);
+        document.querySelector('.activities-header .eyebrow').textContent = `Nigeria Branch · ${currentYear}`;
+        renderMonths(currentYear);
+    }
+
+    function renderMonths(year) {
+        const grid = document.getElementById('monthsGrid');
+        const data = activitiesData[year] || {};
+        grid.innerHTML = '';
+
+        let totalActivities = 0, activeMonths = 0, reportsAvailable = 0;
+
+        monthNames.forEach((name, idx) => {
+            const monthNum = idx + 1;
+            const activities = data[monthNum] || [];
+            totalActivities += activities.length;
+            if (activities.length > 0) { activeMonths++; reportsAvailable += activities.length; }
+
+            const item = document.createElement('div');
+            item.className = 'month-item';
+            item.id = `month-item-${monthNum}`;
+
+            const badgeClass = activities.length > 0 ? '' : 'empty';
+            const badgeText = activities.length > 0
+                ? `${activities.length} activit${activities.length > 1 ? 'ies' : 'y'}`
+                : 'No activity';
+
+            item.innerHTML = `
+                <div class="month-trigger" onclick="toggleMonth(${monthNum})">
+                    <span class="month-number">${String(monthNum).padStart(2,'0')}</span>
+                    <span class="month-name">${name}</span>
+                    <span class="month-badge ${badgeClass}">${badgeText}</span>
+                    <span class="month-chevron">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                    </span>
+                </div>
+                <div class="month-body" id="month-body-${monthNum}">
+                    <div class="month-body-inner">
+                        <div class="month-divider"></div>
+                        ${renderActivities(activities)}
+                    </div>
+                </div>`;
+
+            grid.appendChild(item);
+        });
+
+        animateCounter('statTotal', totalActivities);
+        animateCounter('statMonths', activeMonths);
+        animateCounter('statReports', reportsAvailable);
+    }
+
+    function renderActivities(activities) {
+        if (activities.length === 0) {
+            return `<div class="no-activities"><i class="fa fa-calendar-o" style="margin-right:8px;"></i>No activities recorded for this month.</div>`;
+        }
+        const cards = activities.map(a => `
+            <div class="activity-card">
+                <div class="activity-icon type-${a.type}">
+                    <i class="fa ${a.icon}"></i>
+                </div>
+                <div class="activity-content">
+                    <div class="activity-title">${a.title}</div>
+                    <div class="activity-meta">
+                        <span><i class="fa fa-calendar"></i> ${a.date}</span>
+                        <span><i class="fa fa-map-marker"></i> ${a.location}</span>
+                        <span><i class="fa fa-users"></i> ${a.participants}</span>
+                    </div>
+                    <div class="activity-desc">${a.desc}</div>
+                </div>
+                <div class="activity-actions">
+                    <span class="activity-type-tag tag-${a.type}">${typeLabels[a.type]}</span>
+                    <button class="btn-download" onclick="downloadReport('${a.reportFile}', '${a.title.replace(/'/g,"\\'")}')">
+                        <i class="fa fa-download"></i> Report
+                    </button>
+                </div>
+            </div>`).join('');
+        return `<div class="activity-list">${cards}</div>`;
+    }
+
+    function toggleMonth(monthNum) {
+        const item = document.getElementById(`month-item-${monthNum}`);
+        const body = document.getElementById(`month-body-${monthNum}`);
+        const isOpen = item.classList.contains('active');
+
+        // Close all
+        document.querySelectorAll('.month-item').forEach(el => el.classList.remove('active'));
+        document.querySelectorAll('.month-body').forEach(el => el.classList.remove('open'));
+
+        // Open clicked if it was closed
+        if (!isOpen) {
+            item.classList.add('active');
+            body.classList.add('open');
+            // Smooth scroll to item
+            setTimeout(() => {
+                item.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }, 100);
+        }
+    }
+
+    function downloadReport(filename, title) {
+        // Generates a demo PDF-like text file with report content
+        const content = `ICOFADARE - Nigeria Branch
+============================
+ACTIVITY REPORT
+
+Title    : ${title}
+File     : ${filename}
+Generated: ${new Date().toLocaleDateString('en-GB', {day:'2-digit', month:'long', year:'numeric'})}
+Branch   : Nigeria
+
+============================
+This report summarizes the activity referenced above.
+For the full official document, please contact the Nigeria Branch office.
+
+Contact: info@icofadare.org
+Tel: +1 (240) 665-8756 / +237693558538
+============================
+© ${new Date().getFullYear()} ICOFADARE Nigeria Branch. All rights reserved.`;
+
+        const blob = new Blob([content], { type: 'text/plain' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = filename.replace('.pdf', '_preview.txt');
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+
+        showToast(`Report "${title.substring(0,40)}${title.length>40?'…':''}" downloaded`);
+    }
+
+    function showToast(msg) {
+        const toast = document.getElementById('toastNotif');
+        document.getElementById('toastMsg').textContent = msg;
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 3500);
+    }
+
+    function animateCounter(id, target) {
+        const el = document.getElementById(id);
+        let current = 0;
+        const step = Math.max(1, Math.floor(target / 20));
+        const timer = setInterval(() => {
+            current = Math.min(current + step, target);
+            el.textContent = current;
+            if (current >= target) clearInterval(timer);
+        }, 40);
+    }
+
+    // Init on load
+    renderMonths(currentYear);
+
+    // Auto-open current month if it has activities
+    window.addEventListener('load', () => {
+        const now = new Date();
+        if (now.getFullYear() === currentYear) {
+            const m = now.getMonth() + 1;
+            const data = activitiesData[currentYear] || {};
+            if (data[m] && data[m].length > 0) {
+                setTimeout(() => toggleMonth(m), 400);
+            }
+        }
+    });
+    </script>
+
+</body>
+</html>
